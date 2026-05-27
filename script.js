@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initCardGlowTracking();
     initTerminalGlow();
+    initDeepDiveToggle();
 });
 
 /* ============================================
@@ -533,6 +534,51 @@ function initTerminalGlow() {
     const cursors = document.querySelectorAll('.terminal__cursor');
     cursors.forEach(cursor => {
         cursor.style.textShadow = '0 0 10px rgba(124, 58, 237, 0.7)';
+    });
+}
+
+/* ============================================
+   DEEP DIVE TOGGLE
+   ============================================ */
+
+function initDeepDiveToggle() {
+    const toggle = document.getElementById('deepdiveToggle');
+    const panel = document.getElementById('deepdivePanel');
+    if (!toggle || !panel) return;
+
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent card tilt from triggering
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+            // Collapse
+            toggle.setAttribute('aria-expanded', 'false');
+            panel.setAttribute('aria-hidden', 'true');
+        } else {
+            // Expand
+            toggle.setAttribute('aria-expanded', 'true');
+            panel.setAttribute('aria-hidden', 'false');
+
+            // Smooth scroll the panel into view after a short delay for the animation
+            setTimeout(() => {
+                const panelRect = panel.getBoundingClientRect();
+                const navHeight = document.getElementById('nav')?.offsetHeight || 80;
+
+                // Only scroll if the panel bottom is below the viewport
+                if (panelRect.bottom > window.innerHeight) {
+                    const scrollTarget = window.pageYOffset + panelRect.top - navHeight - 40;
+                    window.scrollTo({
+                        top: scrollTarget,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 300);
+        }
+    });
+
+    // Prevent card tilt/shine effects on deep dive content clicks
+    panel.addEventListener('click', (e) => {
+        e.stopPropagation();
     });
 }
 

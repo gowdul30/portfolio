@@ -1630,6 +1630,385 @@ body:hover .cursor-glow {
 }
 
 /* ============================================
+   DEEP DIVE — INLINE ONE-PAGER
+   ============================================ */
+
+/* Toggle Button */
+.deepdive__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(6, 182, 212, 0.04) 100%);
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: var(--transition-base);
+    font-family: var(--font-sans);
+    position: relative;
+    overflow: hidden;
+}
+
+.deepdive__toggle::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%);
+    opacity: 0;
+    transition: var(--transition-base);
+}
+
+.deepdive__toggle:hover {
+    border-color: rgba(124, 58, 237, 0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.15);
+}
+
+.deepdive__toggle:hover::before {
+    opacity: 1;
+}
+
+.deepdive__toggle-text {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
+}
+
+.deepdive__toggle-text i {
+    font-size: 1rem;
+    -webkit-text-fill-color: initial;
+    color: var(--accent-primary);
+}
+
+.deepdive__toggle-arrow {
+    position: relative;
+    z-index: 1;
+    color: var(--accent-primary);
+    font-size: 0.8rem;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.deepdive__toggle[aria-expanded="true"] .deepdive__toggle-arrow {
+    transform: rotate(180deg);
+}
+
+.deepdive__toggle[aria-expanded="true"] {
+    border-radius: 14px 14px 0 0;
+    border-bottom-color: transparent;
+}
+
+/* Expandable Panel */
+.deepdive {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.deepdive[aria-hidden="false"] {
+    max-height: 3000px;
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.deepdive__inner {
+    padding: 1.75rem;
+    background: linear-gradient(135deg, rgba(10, 5, 32, 0.7) 0%, rgba(15, 10, 40, 0.5) 100%);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-top: none;
+    border-radius: 0 0 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Meta Bar */
+.deepdive__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.deepdive__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.deepdive__meta-item i {
+    color: var(--accent-primary);
+    font-size: 0.85rem;
+    width: 16px;
+    text-align: center;
+}
+
+/* Metrics */
+.deepdive__metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(124, 58, 237, 0.12);
+    border-radius: 12px;
+}
+
+.deepdive__metric {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    border-right: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.deepdive__metric:last-child {
+    border-right: none;
+}
+
+.deepdive__metric-value {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.deepdive__metric-label {
+    font-size: 0.72rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 4 Elements */
+.deepdive__elements {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.deepdive__element {
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-radius: 12px;
+    transition: var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.deepdive__element:hover {
+    border-color: rgba(124, 58, 237, 0.25);
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateY(-2px);
+}
+
+.deepdive__element-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.deepdive__element-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+    font-weight: 500;
+    background: rgba(6, 182, 212, 0.08);
+    padding: 0.15rem 0.55rem;
+    border-radius: 4px;
+    border: 1px solid rgba(6, 182, 212, 0.18);
+    flex-shrink: 0;
+}
+
+.deepdive__element-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.deepdive__element-content {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.deepdive__element-content code {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--accent-cyan);
+    background: rgba(6, 182, 212, 0.08);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+}
+
+/* Architecture Flow */
+.deepdive__architecture {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(124, 58, 237, 0.12);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.deepdive__architecture-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.deepdive__architecture-title i {
+    color: var(--accent-primary);
+}
+
+.deepdive__flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+
+.deepdive__flow-node {
+    background: rgba(15, 10, 40, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 0.65rem 0.85rem;
+    text-align: center;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-base);
+}
+
+.deepdive__flow-node:hover {
+    transform: translateY(-2px);
+    border-color: rgba(124, 58, 237, 0.3);
+}
+
+.deepdive__flow-node--accent {
+    border-color: rgba(124, 58, 237, 0.35);
+    background: rgba(124, 58, 237, 0.06);
+}
+
+.deepdive__flow-icon {
+    font-size: 1.1rem;
+}
+
+.deepdive__flow-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.deepdive__flow-tech {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--text-tertiary);
+}
+
+.deepdive__flow-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-muted);
+    flex: 1;
+    min-width: 20px;
+    max-width: 60px;
+}
+
+.deepdive__flow-arrow-line {
+    height: 1px;
+    background: rgba(124, 58, 237, 0.2);
+    width: 80%;
+}
+
+.deepdive__flow-arrow-tip {
+    font-size: 0.55rem;
+    color: var(--text-tertiary);
+    margin-top: -2px;
+}
+
+/* Tech Stack */
+.deepdive__techstack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+
+.deepdive__techstack-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+.deepdive__techstack-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.deepdive__tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(124, 58, 237, 0.15);
+    border-radius: 6px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: var(--transition-fast);
+}
+
+.deepdive__tech-badge:hover {
+    border-color: rgba(124, 58, 237, 0.35);
+    background: rgba(124, 58, 237, 0.08);
+    transform: translateY(-1px);
+}
+
+.deepdive__tech-badge i {
+    color: var(--accent-cyan);
+    font-size: 0.78rem;
+}
+
+/* ============================================
    EXPERIENCE TIMELINE
    ============================================ */
 
@@ -2109,6 +2488,16 @@ body:hover .cursor-glow {
     .project__agents-grid { grid-template-columns: repeat(2, 1fr); }
     .project__enterprise-flow { gap: 0.5rem; }
     .ent__step { min-width: 70px; }
+
+    /* Deep Dive responsive */
+    .deepdive__metrics { grid-template-columns: repeat(2, 1fr); }
+    .deepdive__metric { border-right: none; }
+    .deepdive__metric:nth-child(odd) { border-right: 1px solid rgba(124, 58, 237, 0.1); }
+    .deepdive__flow { flex-direction: column; gap: 0.5rem; }
+    .deepdive__flow-arrow { transform: rotate(90deg); min-width: auto; max-width: none; }
+    .deepdive__flow-node { min-width: 160px; }
+    .deepdive__inner { padding: 1.25rem; }
+    .deepdive__meta { flex-direction: column; gap: 0.75rem; }
     
     .footer__top, .footer__bottom { flex-direction: column; gap: 1rem; text-align: center; }
     
@@ -2132,4 +2521,12 @@ body:hover .cursor-glow {
     .impact__number { font-size: 2.8rem; }
     
     .project__agents-grid { grid-template-columns: 1fr; }
+
+    /* Deep Dive mobile */
+    .deepdive__metrics { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .deepdive__metric-value { font-size: 1.2rem; }
+    .deepdive__element { padding: 1rem 1.15rem; }
+    .deepdive__element-content { font-size: 0.82rem; text-align: left; }
+    .deepdive__toggle { padding: 0.85rem 1rem; }
+    .deepdive__toggle-text { font-size: 0.78rem; }
 }

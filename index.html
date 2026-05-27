@@ -636,6 +636,157 @@
                         <span class="tag tag--sm">Kinesis</span>
                         <span class="tag tag--sm">Production</span>
                     </div>
+
+                    <!-- Deep Dive Toggle Button -->
+                    <button class="deepdive__toggle" id="deepdiveToggle" aria-expanded="false" aria-controls="deepdivePanel">
+                        <span class="deepdive__toggle-text">
+                            <i class="fas fa-microscope"></i>
+                            Deep Dive — Proof of Work
+                        </span>
+                        <span class="deepdive__toggle-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+
+                    <!-- Expandable Deep Dive Panel -->
+                    <div class="deepdive" id="deepdivePanel" aria-hidden="true">
+                        <div class="deepdive__inner">
+
+                            <!-- Meta Bar -->
+                            <div class="deepdive__meta">
+                                <div class="deepdive__meta-item">
+                                    <i class="fas fa-building"></i>
+                                    <span>Accenture Solutions</span>
+                                </div>
+                                <div class="deepdive__meta-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>Verizon & Wells Fargo</span>
+                                </div>
+                                <div class="deepdive__meta-item">
+                                    <i class="fas fa-code"></i>
+                                    <span>Senior AI & Backend Engineer</span>
+                                </div>
+                            </div>
+
+                            <!-- Metrics Bar -->
+                            <div class="deepdive__metrics">
+                                <div class="deepdive__metric">
+                                    <span class="deepdive__metric-value">+40%</span>
+                                    <span class="deepdive__metric-label">Resolution Speed</span>
+                                </div>
+                                <div class="deepdive__metric">
+                                    <span class="deepdive__metric-value">-50%</span>
+                                    <span class="deepdive__metric-label">Ingestion Latency</span>
+                                </div>
+                                <div class="deepdive__metric">
+                                    <span class="deepdive__metric-value">-80%</span>
+                                    <span class="deepdive__metric-label">Memory Footprint</span>
+                                </div>
+                                <div class="deepdive__metric">
+                                    <span class="deepdive__metric-value">979</span>
+                                    <span class="deepdive__metric-label">Passing Unit Tests</span>
+                                </div>
+                            </div>
+
+                            <!-- 4 Elements Grid -->
+                            <div class="deepdive__elements">
+                                <div class="deepdive__element">
+                                    <div class="deepdive__element-header">
+                                        <span class="deepdive__element-num">01</span>
+                                        <h4 class="deepdive__element-title">What was the problem or brief?</h4>
+                                    </div>
+                                    <p class="deepdive__element-content">
+                                        Enterprise call centers for clients like Verizon and Wells Fargo process millions of customer calls daily, but extracting actionable insights—such as the exact root causes of customer frustration, compliance failures, and urgent callback intents—was a slow, manual process. Without a scalable, persistent automated system, critical customer escalations went unnoticed, leading to customer churn, high operational costs, and prolonged issue-resolution times. I was tasked with building a high-throughput, production-grade Generative AI pipeline to ingest call transcripts, perform granular conversational analysis, and deliver real-time prescriptive insights to business leaders.
+                                    </p>
+                                </div>
+                                <div class="deepdive__element">
+                                    <div class="deepdive__element-header">
+                                        <span class="deepdive__element-num">02</span>
+                                        <h4 class="deepdive__element-title">How did you approach it?</h4>
+                                    </div>
+                                    <p class="deepdive__element-content">
+                                        Instead of a monolithic LLM prompt that would suffer from accuracy degradation, I architected a modular multi-agent system using LangGraph with five specialized, parallel agents (Root Cause, Escalation, Sentiment, Action Items, and Quality Assurance). To deploy on resource-constrained hosting (Render's 512MB free tier), I switched from local HuggingFace embeddings to cloud-hosted Google Generative AI Embeddings (<code>models/text-embedding-004</code>), eliminating heavy PyTorch/Transformer dependencies to save over 400MB of RAM. Additionally, I designed a dual-storage scheme: using MongoDB Atlas for persistent call document records and ChromaDB for semantic vector retrieval.
+                                    </p>
+                                </div>
+                                <div class="deepdive__element">
+                                    <div class="deepdive__element-header">
+                                        <span class="deepdive__element-num">03</span>
+                                        <h4 class="deepdive__element-title">What did you actually do?</h4>
+                                    </div>
+                                    <p class="deepdive__element-content">
+                                        I implemented the FastAPI stateful backend and the live <code>/api/ingest</code> endpoint, which feeds incoming raw transcripts directly into the LangGraph pipeline and maps the output Pydantic schema into a dashboard-compatible call record. I built database adapters in Python utilizing <code>pymongo</code> to persist records on MongoDB Atlas, alongside a vector store service that embeds transcripts on the fly using the Google API. Finally, I replaced mock streaming with an active WebSocket broadcaster that pushes live-processed call updates directly to the React dashboard, and authored database migration and seeding scripts to ensure consistent startup states.
+                                    </p>
+                                </div>
+                                <div class="deepdive__element">
+                                    <div class="deepdive__element-header">
+                                        <span class="deepdive__element-num">04</span>
+                                        <h4 class="deepdive__element-title">What was the result?</h4>
+                                    </div>
+                                    <p class="deepdive__element-content">
+                                        The updated architecture successfully eliminated local CPU embedding constraints, cutting memory footprint by 80% to allow seamless, stable cloud deployment on Render within a 512MB limit. By introducing a persistent MongoDB Atlas layer, we achieved enterprise-grade data durability and scaled the platform to handle live, real-time incoming call ingestions rather than mock data streams. The resulting system now executes speech transcript extraction, agent scoring, MongoDB storage, vector embedding, and real-time dashboard updates via WebSockets in less than 5 seconds.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Architecture Flow -->
+                            <div class="deepdive__architecture">
+                                <h4 class="deepdive__architecture-title">
+                                    <i class="fas fa-network-wired"></i>
+                                    Stateful Real-Time Ingestion Pipeline
+                                </h4>
+                                <div class="deepdive__flow">
+                                    <div class="deepdive__flow-node">
+                                        <span class="deepdive__flow-icon">📥</span>
+                                        <span class="deepdive__flow-name">Webhook Ingest</span>
+                                        <span class="deepdive__flow-tech">POST /api/ingest</span>
+                                    </div>
+                                    <div class="deepdive__flow-arrow">
+                                        <div class="deepdive__flow-arrow-line"></div>
+                                        <div class="deepdive__flow-arrow-tip">▶</div>
+                                    </div>
+                                    <div class="deepdive__flow-node deepdive__flow-node--accent">
+                                        <span class="deepdive__flow-icon">🧠</span>
+                                        <span class="deepdive__flow-name">LangGraph Core</span>
+                                        <span class="deepdive__flow-tech">5 Specialist Agents</span>
+                                    </div>
+                                    <div class="deepdive__flow-arrow">
+                                        <div class="deepdive__flow-arrow-line"></div>
+                                        <div class="deepdive__flow-arrow-tip">▶</div>
+                                    </div>
+                                    <div class="deepdive__flow-node">
+                                        <span class="deepdive__flow-icon">🍃</span>
+                                        <span class="deepdive__flow-name">MongoDB Atlas</span>
+                                        <span class="deepdive__flow-tech">Call Document DB</span>
+                                    </div>
+                                    <div class="deepdive__flow-arrow">
+                                        <div class="deepdive__flow-arrow-line"></div>
+                                        <div class="deepdive__flow-arrow-tip">▶</div>
+                                    </div>
+                                    <div class="deepdive__flow-node">
+                                        <span class="deepdive__flow-icon">⚡</span>
+                                        <span class="deepdive__flow-name">Chroma & WS</span>
+                                        <span class="deepdive__flow-tech">Google Embed / WebSockets</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tech Stack -->
+                            <div class="deepdive__techstack">
+                                <span class="deepdive__techstack-title">Full Tech Stack:</span>
+                                <div class="deepdive__techstack-badges">
+                                    <span class="deepdive__tech-badge"><i class="fas fa-brain"></i> LangGraph</span>
+                                    <span class="deepdive__tech-badge"><i class="fas fa-bolt"></i> FastAPI</span>
+                                    <span class="deepdive__tech-badge"><i class="fas fa-leaf"></i> MongoDB Atlas</span>
+                                    <span class="deepdive__tech-badge"><i class="fas fa-database"></i> ChromaDB</span>
+                                    <span class="deepdive__tech-badge"><i class="fab fa-google"></i> Google Embeddings</span>
+                                    <span class="deepdive__tech-badge"><i class="fab fa-react"></i> React 18 & WebSockets</span>
+                                    <span class="deepdive__tech-badge"><i class="fas fa-shield-alt"></i> MS Presidio</span>
+                                    <span class="deepdive__tech-badge"><i class="fas fa-check-double"></i> Pydantic / Instructor</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </article>
             </div>
         </div>
