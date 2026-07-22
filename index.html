@@ -3,886 +3,1214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gowdul Aalam M | Senior AI Automation & Agentic Systems Engineer</title>
-    <meta name="description" content="Portfolio of Gowdul Aalam M — Senior AI Automation & Agentic Systems Engineer specializing in production-grade agentic systems, multi-agent orchestration, and scalable backend infrastructure.">
-    <meta name="keywords" content="AI Engineer, Agentic Systems, LangGraph, CrewAI, FastAPI, Spring Boot, RAG, LLM, Portfolio">
+
+    <!-- Primary SEO -->
+    <title>Gowdul Aalam M — Agentic AI Engineer | Production LLM Systems</title>
+    <meta name="description" content="Senior Agentic AI Engineer with 5 years building production-grade multi-agent systems, LLM pipelines, and enterprise AI for Verizon & Wells Fargo at Accenture. Open to remote roles.">
+    <meta name="keywords" content="Agentic AI Engineer, LLM Engineer, Multi-Agent Systems, LangGraph, CrewAI, RAG Pipeline, FastAPI, Production AI, OpenAI, Anthropic, Claude, GPT-4o, AI Solutions Architect, Full Stack AI Engineer, Founding Engineer">
     <meta name="author" content="Gowdul Aalam M">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gowdul Aalam M — Agentic AI Engineer">
+    <meta property="og:description" content="I build production-grade AI systems that ship. Multi-agent orchestration, LLM pipelines, enterprise AI for Verizon & Wells Fargo.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gowdulaalam.dev">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gowdul Aalam M — Agentic AI Engineer">
+    <meta name="twitter:description" content="I build production-grade AI systems that ship.">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gowdul Aalam M",
+      "jobTitle": "Senior Agentic AI Engineer",
+      "description": "Senior Agentic AI Engineer specializing in production-grade multi-agent systems, LLM pipelines, and enterprise AI infrastructure.",
+      "email": "gowdulaalam01@gmail.com",
+      "url": "https://gowdulaalam.dev",
+      "sameAs": [
+        "https://github.com/gowdul30",
+        "https://www.linkedin.com/in/gowdul-aalam/"
+      ],
+      "knowsAbout": [
+        "Agentic AI","LangGraph","Multi-Agent Systems","RAG","LLM Engineering",
+        "FastAPI","Python","TypeScript","MCP","Tool Calling","Structured Outputs",
+        "Vector Databases","LLM Observability","Production AI Systems"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Accenture Solutions"
+      }
+    }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600;700&family=Kanit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Particle Canvas Background -->
-    <canvas id="particleCanvas"></canvas>
 
-    <!-- Cursor Glow Follower -->
-    <div class="cursor-glow" id="cursorGlow"></div>
+    <!-- ===== PRELOADER ===== -->
+    <div class="preloader" id="preloader" role="status" aria-label="Loading portfolio">
+        <div class="preloader__inner">
+            <div class="preloader__logo">GA</div>
+            <div class="preloader__bar"><div class="preloader__bar-fill"></div></div>
+            <div class="preloader__text">Initializing systems...</div>
+        </div>
+    </div>
 
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader__content">
-            <div class="preloader__logo">&lt;GA/&gt;</div>
-            <div class="preloader__bar">
-                <div class="preloader__bar-fill"></div>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__inner">
+            <a href="#home" class="nav__logo" aria-label="Gowdul Aalam M — Home">
+                <span class="nav__logo-text">GA</span>
+                <span class="nav__logo-dot" aria-hidden="true"></span>
+            </a>
+
+            <div class="nav__links" id="navLinks" role="menubar">
+                <a href="#work"        class="nav__link" role="menuitem" data-section="work">Work</a>
+                <a href="#philosophy"  class="nav__link" role="menuitem" data-section="philosophy">Philosophy</a>
+                <a href="#stack"       class="nav__link" role="menuitem" data-section="stack">Stack</a>
+                <a href="#experience"  class="nav__link" role="menuitem" data-section="experience">Experience</a>
+                <a href="#contact"     class="nav__link nav__link--cta" role="menuitem" data-section="contact">Let's Build</a>
+            </div>
+
+            <div class="nav__right">
+                <div class="nav__availability" aria-label="Currently available for roles">
+                    <span class="nav__availability-dot" aria-hidden="true"></span>
+                    <span>Available</span>
+                </div>
+                <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="nav__mobile" id="navMobile" aria-hidden="true">
+            <a href="#work"       class="nav__mobile-link">Work</a>
+            <a href="#philosophy" class="nav__mobile-link">Philosophy</a>
+            <a href="#stack"      class="nav__mobile-link">Stack</a>
+            <a href="#experience" class="nav__mobile-link">Experience</a>
+            <a href="#contact"    class="nav__mobile-link nav__mobile-link--cta">Let's Build</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home" aria-label="Introduction">
+        <div class="hero__bg" aria-hidden="true">
+            <div class="hero__orb hero__orb--1"></div>
+            <div class="hero__orb hero__orb--2"></div>
+            <div class="hero__grid"></div>
+        </div>
+
+        <div class="hero__container">
+            <!-- Left: Content -->
+            <div class="hero__content">
+                <div class="hero__availability reveal" aria-label="Available for remote roles in USD, EUR, SGD, and AED">
+                    <span class="hero__availability-dot" aria-hidden="true"></span>
+                    <span>Available for remote roles</span>
+                    <span class="hero__availability-divider" aria-hidden="true">·</span>
+                    <span class="hero__availability-currencies">USD &middot; EUR &middot; SGD &middot; AED</span>
+                </div>
+
+                <h1 class="hero__headline reveal reveal--delay-1">
+                    I build production-grade<br>
+                    <span class="hero__headline-accent">AI systems that ship.</span>
+                </h1>
+
+                <p class="hero__subline reveal reveal--delay-2">
+                    <strong>Agentic AI Engineer</strong> — 5 years architecting multi-agent orchestration,
+                    LLM pipelines, and enterprise AI infrastructure for clients including
+                    <span class="hero__client">Verizon</span> and <span class="hero__client">Wells Fargo</span>
+                    at <strong>Accenture</strong>.
+                </p>
+
+                <!-- Impact Metric Pills -->
+                <div class="hero__metrics reveal reveal--delay-3" aria-label="Key performance metrics">
+                    <div class="metric-pill" title="+40% issue resolution speed improvement">
+                        <span class="metric-pill__value">+40%</span>
+                        <span class="metric-pill__label">Resolution Speed</span>
+                    </div>
+                    <div class="metric-pill" title="50% reduction in data ingestion latency">
+                        <span class="metric-pill__value">&minus;50%</span>
+                        <span class="metric-pill__label">Ingestion Latency</span>
+                    </div>
+                    <div class="metric-pill" title="80% reduction in memory footprint">
+                        <span class="metric-pill__value">&minus;80%</span>
+                        <span class="metric-pill__label">Memory Footprint</span>
+                    </div>
+                    <div class="metric-pill" title="979 AI-generated passing unit tests">
+                        <span class="metric-pill__value">979</span>
+                        <span class="metric-pill__label">Passing Tests</span>
+                    </div>
+                </div>
+
+                <!-- CTAs -->
+                <div class="hero__ctas reveal reveal--delay-4">
+                    <a href="#work" class="btn btn--primary" id="cta-work">
+                        View Selected Work
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="resume.pdf" class="btn btn--outline" id="cta-resume" download="Gowdul_Aalam_Resume.pdf">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                        Resume
+                    </a>
+                    <a href="https://calendly.com/gowdulaalam01/30min" class="btn btn--ghost" id="cta-calendly" target="_blank" rel="noopener noreferrer">
+                        Book a Call
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="hero__socials reveal reveal--delay-5">
+                    <a href="https://github.com/gowdul30" class="social-link" aria-label="GitHub profile" id="social-github" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gowdul-aalam/" class="social-link" aria-label="LinkedIn profile" id="social-linkedin" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:gowdulaalam01@gmail.com" class="social-link" aria-label="Send email" id="social-email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Animated Agent Diagram -->
+            <div class="hero__visual reveal reveal--delay-2" aria-hidden="true">
+                <div class="agent-diagram">
+                    <div class="agent-diagram__title">
+                        <span class="agent-diagram__dot agent-diagram__dot--red"></span>
+                        <span class="agent-diagram__dot agent-diagram__dot--yellow"></span>
+                        <span class="agent-diagram__dot agent-diagram__dot--green"></span>
+                        <span class="agent-diagram__filename">agent_orchestrator.py</span>
+                    </div>
+                    <div class="agent-diagram__body">
+                        <div class="agent-flow">
+                            <div class="agent-flow__node">
+                                <span class="agent-flow__icon">📥</span>
+                                <span>Call Transcript</span>
+                            </div>
+                            <div class="agent-flow__connector"></div>
+                            <div class="agent-flow__node agent-flow__node--accent">
+                                <span class="agent-flow__icon">🧠</span>
+                                <span>LangGraph Orchestrator</span>
+                                <span class="agent-flow__badge">StateGraph</span>
+                            </div>
+                            <div class="agent-flow__connector"></div>
+                            <div class="agent-flow__agents">
+                                <div class="agent-flow__agent"><span class="agent-flow__agent-dot"></span>Root Cause Agent</div>
+                                <div class="agent-flow__agent"><span class="agent-flow__agent-dot"></span>Escalation Agent</div>
+                                <div class="agent-flow__agent"><span class="agent-flow__agent-dot"></span>Sentiment Agent</div>
+                                <div class="agent-flow__agent"><span class="agent-flow__agent-dot"></span>QA Agent</div>
+                            </div>
+                            <div class="agent-flow__connector"></div>
+                            <div class="agent-flow__node agent-flow__node--success">
+                                <span class="agent-flow__icon">✅</span>
+                                <span>Dashboard Update</span>
+                                <span class="agent-flow__metric">&lt;5s end-to-end</span>
+                            </div>
+                        </div>
+
+                        <div class="hero__live-metrics">
+                            <div class="live-metric">
+                                <span class="live-metric__dot"></span>
+                                <span class="live-metric__label">Active agents:</span>
+                                <span class="live-metric__value">12</span>
+                            </div>
+                            <div class="live-metric">
+                                <span class="live-metric__label">P95 latency:</span>
+                                <span class="live-metric__value live-metric__value--success">187ms</span>
+                            </div>
+                            <div class="live-metric">
+                                <span class="live-metric__label">Tests passing:</span>
+                                <span class="live-metric__value live-metric__value--success">979/979 ✓</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="float-badge float-badge--1">LangGraph</div>
+                <div class="float-badge float-badge--2">FastAPI</div>
+                <div class="float-badge float-badge--3">GPT-4o</div>
+                <div class="float-badge float-badge--4">RAG</div>
+            </div>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">
+            <div class="scroll-cue__wheel"></div>
+            <span>scroll</span>
+        </div>
+    </section>
+
+    <!-- ===== TECH MARQUEE ===== -->
+    <div class="marquee-strip" aria-hidden="true" role="presentation">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>LangGraph</span><span>&middot;</span>
+                <span>CrewAI</span><span>&middot;</span>
+                <span>GPT-4o</span><span>&middot;</span>
+                <span>Claude 3.5 Sonnet</span><span>&middot;</span>
+                <span>RAG Pipelines</span><span>&middot;</span>
+                <span>FastAPI</span><span>&middot;</span>
+                <span>Multi-Agent Systems</span><span>&middot;</span>
+                <span>Vector Databases</span><span>&middot;</span>
+                <span>LangSmith</span><span>&middot;</span>
+                <span>AWS Kinesis</span><span>&middot;</span>
+                <span>MongoDB Atlas</span><span>&middot;</span>
+                <span>ChromaDB</span><span>&middot;</span>
+                <span>Pydantic v2</span><span>&middot;</span>
+                <span>WebSockets</span><span>&middot;</span>
+                <span>MCP</span><span>&middot;</span>
+                <span>Tool Calling</span><span>&middot;</span>
+                <span>Structured Outputs</span><span>&middot;</span>
+                <span>vLLM</span><span>&middot;</span>
+                <span>Instructor</span><span>&middot;</span>
+                <span>LangGraph</span><span>&middot;</span>
+                <span>CrewAI</span><span>&middot;</span>
+                <span>GPT-4o</span><span>&middot;</span>
+                <span>Claude 3.5 Sonnet</span><span>&middot;</span>
+                <span>RAG Pipelines</span><span>&middot;</span>
+                <span>FastAPI</span><span>&middot;</span>
+                <span>Multi-Agent Systems</span><span>&middot;</span>
+                <span>Vector Databases</span><span>&middot;</span>
+                <span>LangSmith</span><span>&middot;</span>
+                <span>AWS Kinesis</span><span>&middot;</span>
+                <span>MongoDB Atlas</span><span>&middot;</span>
+                <span>ChromaDB</span><span>&middot;</span>
+                <span>Pydantic v2</span><span>&middot;</span>
+                <span>WebSockets</span><span>&middot;</span>
+                <span>MCP</span><span>&middot;</span>
+                <span>Tool Calling</span><span>&middot;</span>
+                <span>Structured Outputs</span><span>&middot;</span>
+                <span>vLLM</span><span>&middot;</span>
+                <span>Instructor</span><span>&middot;</span>
             </div>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav__container">
-            <a href="#" class="nav__logo" id="nav-logo">
-                <span class="nav__logo-bracket">&lt;</span>
-                <span class="nav__logo-name">GA</span>
-                <span class="nav__logo-bracket">/&gt;</span>
-            </a>
-            <div class="nav__links" id="navLinks">
-                <a href="#home" class="nav__link" data-section="home">Home</a>
-                <a href="#about" class="nav__link" data-section="about">About</a>
-                <a href="#expertise" class="nav__link" data-section="expertise">Expertise</a>
-                <a href="#projects" class="nav__link" data-section="projects">Projects</a>
-                <a href="#experience" class="nav__link" data-section="experience">Experience</a>
-                <a href="#contact" class="nav__link nav__link--cta" data-section="contact">Get in Touch</a>
-            </div>
-            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="nav__mobile" id="navMobile">
-            <a href="#home" class="nav__mobile-link">Home</a>
-            <a href="#about" class="nav__mobile-link">About</a>
-            <a href="#expertise" class="nav__mobile-link">Expertise</a>
-            <a href="#projects" class="nav__mobile-link">Projects</a>
-            <a href="#experience" class="nav__mobile-link">Experience</a>
-            <a href="#contact" class="nav__mobile-link">Get in Touch</a>
-        </div>
-    </nav>
-
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero" id="home">
-        <div class="hero__container">
-            <div class="hero__content">
-                <div class="hero__badge animate-on-scroll">
-                    <span class="hero__badge-dot"></span>
-                    <span>Available for Opportunities</span>
-                </div>
-
-                <h1 class="hero__title animate-on-scroll">
-                    <span class="hero__greeting">Hello, I'm</span>
-                    <span class="hero__name">
-                        <span class="hero__name-text" id="heroName">Gowdul Aalam M</span>
-                    </span>
-                    <span class="hero__role">
-                        <span class="hero__role-static">I build </span>
-                        <span class="hero__role-dynamic" id="typewriter"></span>
-                        <span class="hero__cursor">|</span>
-                    </span>
-                </h1>
-
-                <p class="hero__subtitle animate-on-scroll">
-                    <strong>Senior AI Automation & Agentic Systems Engineer</strong> with 4+ years of experience 
-                    architecting <span class="text-highlight">multi-agent workflows</span> and 
-                    <span class="text-highlight">high-throughput infrastructures</span> for enterprise clients 
-                    like <span class="client-tag">Verizon</span> and <span class="client-tag">Wells Fargo</span>.
-                </p>
-
-                <div class="hero__actions animate-on-scroll">
-                    <a href="#projects" class="btn btn--primary" id="cta-projects">
-                        <i class="fas fa-rocket"></i>
-                        View My Work
-                    </a>
-                    <a href="#contact" class="btn btn--outline" id="cta-contact">
-                        <i class="fas fa-envelope"></i>
-                        Contact Me
-                    </a>
-                    <a href="resume.pdf" class="btn btn--ghost" id="cta-resume" download="Gowdul_Aalam_Resume.pdf">
-                        <i class="fas fa-download"></i>
-                        Resume
-                    </a>
-                </div>
-
-                <div class="hero__socials animate-on-scroll">
-                    <a href="https://github.com/gowdul30" class="social-icon" aria-label="GitHub" id="social-github" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/gowdul-aalam/" class="social-icon" aria-label="LinkedIn" id="social-linkedin" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="mailto:gowdulaalam01@gmail.com" class="social-icon" aria-label="Email" id="social-email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Hero Visual: Animated Code Terminal -->
-            <div class="hero__visual animate-on-scroll">
-                <div class="hero__terminal">
-                    <div class="terminal__header">
-                        <div class="terminal__dots">
-                            <span class="terminal__dot terminal__dot--red"></span>
-                            <span class="terminal__dot terminal__dot--yellow"></span>
-                            <span class="terminal__dot terminal__dot--green"></span>
-                        </div>
-                        <span class="terminal__title">agent_orchestrator.py</span>
-                    </div>
-                    <pre class="terminal__body"><code><span class="token-keyword">from</span> <span class="token-module">langgraph.graph</span> <span class="token-keyword">import</span> StateGraph
-<span class="token-keyword">from</span> <span class="token-module">langgraph.checkpoint</span> <span class="token-keyword">import</span> MemorySaver
-
-<span class="token-comment"># Production multi-agent orchestration</span>
-<span class="token-keyword">class</span> <span class="token-class">AgentOrchestrator</span>:
-    <span class="token-keyword">def</span> <span class="token-function">__init__</span>(self, agents: <span class="token-type">list</span>):
-        self.graph = StateGraph(AgentState)
-        self.memory = MemorySaver()
-        self._register_agents(agents)
-
-    <span class="token-keyword">def</span> <span class="token-function">execute</span>(self, task: <span class="token-type">str</span>) -> AgentResult:
-        <span class="token-string">"""Human-in-the-loop agentic execution"""</span>
-        <span class="token-keyword">return</span> self.graph.invoke(
-            {<span class="token-string">"task"</span>: task},
-            config={<span class="token-string">"checkpointer"</span>: self.memory}
-        )<span class="terminal__cursor">█</span></code></pre>
-                </div>
-
-                <!-- Floating Tech Badges around terminal -->
-                <div class="floating-badge floating-badge--1">🧠 LangGraph</div>
-                <div class="floating-badge floating-badge--2">⚡ FastAPI</div>
-                <div class="floating-badge floating-badge--3">🤖 CrewAI</div>
-                <div class="floating-badge floating-badge--4">☁️ AWS</div>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator" id="scrollIndicator">
-            <div class="scroll-indicator__mouse">
-                <div class="scroll-indicator__wheel"></div>
-            </div>
-            <span>Scroll Down</span>
-        </div>
-    </section>
-
-    <!-- ===== ABOUT SECTION ===== -->
-    <section class="about" id="about">
+    <!-- ===== SELECTED WORK ===== -->
+    <section class="work" id="work" aria-label="Selected projects">
         <div class="section__container">
-            <div class="section__header animate-on-scroll">
-                <span class="section__label">// ABOUT_ME</span>
-                <h2 class="section__title">Who I <span class="text-gradient">Am</span></h2>
-                <div class="section__line"></div>
-            </div>
+            <header class="section__header reveal">
+                <span class="section__eyebrow">// SELECTED_WORK</span>
+                <h2 class="section__title">Production Systems, <span class="text-accent">Not Demos</span></h2>
+                <p class="section__subtitle">Five projects. Five capabilities. Each built and shipped in a production environment.</p>
+            </header>
 
-            <div class="about__content">
-                <div class="about__text animate-on-scroll">
-                    <p class="about__intro">
-                        I'm a <span class="text-gradient-inline">Senior AI Engineer</span> passionate about building 
-                        autonomous systems that don't just work — they <em>think</em>, <em>reason</em>, and <em>execute</em>.
-                    </p>
-                    <p>
-                        My work spans from designing multi-agent orchestration frameworks with LangGraph and CrewAI, 
-                        to building high-throughput backend systems processing millions of daily requests. I've delivered 
-                        production-grade AI solutions for Fortune 500 companies, achieving measurable business impact.
-                    </p>
-                    <p>
-                        When I'm not architecting agentic systems, I'm benchmarking LLMs, optimizing RAG pipelines, 
-                        or exploring the frontier of autonomous AI systems.
-                    </p>
-
-                    <div class="about__stats">
-                        <div class="stat-card">
-                            <span class="stat-card__number" data-target="4">0</span>
-                            <span class="stat-card__suffix">+</span>
-                            <span class="stat-card__label">Years Experience</span>
+            <!-- ─── Project 01: Customer Interaction Insights ─── -->
+            <article class="project reveal" id="project-01">
+                <div class="project__header">
+                    <div class="project__meta">
+                        <span class="project__number" aria-label="Project 1">01</span>
+                        <div class="project__tags">
+                            <span class="tag tag--enterprise">Enterprise</span>
+                            <span class="tag tag--production">Production</span>
                         </div>
-                        <div class="stat-card">
-                            <span class="stat-card__number" data-target="10">0</span>
-                            <span class="stat-card__suffix">+</span>
-                            <span class="stat-card__label">Projects Delivered</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-card__number" data-target="979">0</span>
-                            <span class="stat-card__suffix"></span>
-                            <span class="stat-card__label">AI Test Cases</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-card__number" data-target="40">0</span>
-                            <span class="stat-card__suffix">%</span>
-                            <span class="stat-card__label">Faster Resolution</span>
-                        </div>
+                    </div>
+                    <div class="project__links">
+                        <a href="https://github.com/gowdul30" class="project__link" target="_blank" rel="noopener noreferrer" aria-label="View project on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                        </a>
                     </div>
                 </div>
 
-                <div class="about__skills-overview animate-on-scroll">
-                    <div class="skills-ring-container">
-                        <div class="skill-ring" data-percentage="95" data-label="Python">
-                            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" class="skill-ring__bg"/><circle cx="60" cy="60" r="54" class="skill-ring__fill" style="--percentage: 95"/></svg>
-                            <div class="skill-ring__content"><span class="skill-ring__value">95%</span><span class="skill-ring__label">Python</span></div>
+                <div class="project__body">
+                    <div class="project__summary">
+                        <div class="project__category">
+                            <span class="category-dot category-dot--agentic" aria-hidden="true"></span>
+                            Enterprise LLM Pipeline &middot; 5-Agent LangGraph Orchestration
                         </div>
-                        <div class="skill-ring" data-percentage="90" data-label="AI/ML">
-                            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" class="skill-ring__bg"/><circle cx="60" cy="60" r="54" class="skill-ring__fill" style="--percentage: 90"/></svg>
-                            <div class="skill-ring__content"><span class="skill-ring__value">90%</span><span class="skill-ring__label">AI/ML</span></div>
-                        </div>
-                        <div class="skill-ring" data-percentage="88" data-label="Backend">
-                            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" class="skill-ring__bg"/><circle cx="60" cy="60" r="54" class="skill-ring__fill" style="--percentage: 88"/></svg>
-                            <div class="skill-ring__content"><span class="skill-ring__value">88%</span><span class="skill-ring__label">Backend</span></div>
-                        </div>
-                        <div class="skill-ring" data-percentage="85" data-label="Cloud">
-                            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" class="skill-ring__bg"/><circle cx="60" cy="60" r="54" class="skill-ring__fill" style="--percentage: 85"/></svg>
-                            <div class="skill-ring__content"><span class="skill-ring__value">85%</span><span class="skill-ring__label">Cloud</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <h3 class="project__title">Customer Interaction Insights</h3>
+                        <p class="project__desc">
+                            A production-grade Generative AI pipeline deployed for Verizon and Wells Fargo call centers,
+                            automating root-cause detection, escalation identification, and callback intent extraction
+                            from millions of daily customer interactions — using a 5-specialist-agent LangGraph system
+                            with real-time WebSocket delivery to analyst dashboards.
+                        </p>
 
-    <!-- ===== EXPERTISE SECTION ===== -->
-    <section class="expertise" id="expertise">
-        <div class="section__container">
-            <div class="section__header animate-on-scroll">
-                <span class="section__label">// CORE_EXPERTISE</span>
-                <h2 class="section__title">What I <span class="text-gradient">Engineer</span></h2>
-                <div class="section__line"></div>
-                <p class="section__subtitle">Production systems, not proofs of concept.</p>
-            </div>
-
-            <div class="expertise__grid">
-                <!-- Agentic AI -->
-                <div class="expertise__card animate-on-scroll" id="expertise-agentic">
-                    <div class="card-glow"></div>
-                    <div class="expertise__icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="expertise__card-title">Agentic AI</h3>
-                    <p class="expertise__card-desc">
-                        Stateful multi-agent orchestration with human-in-the-loop patterns. 
-                        Building autonomous systems that reason, plan, and execute.
-                    </p>
-                    <div class="expertise__tags">
-                        <span class="tag">LangGraph</span>
-                        <span class="tag">CrewAI</span>
-                        <span class="tag">Multi-Agent</span>
-                        <span class="tag">HITL Patterns</span>
-                    </div>
-                    <div class="expertise__flow">
-                        <div class="flow__node flow__node--start">Input</div>
-                        <div class="flow__arrow"><i class="fas fa-arrow-right"></i></div>
-                        <div class="flow__node flow__node--agent">Agent₁</div>
-                        <div class="flow__arrow"><i class="fas fa-arrow-right"></i></div>
-                        <div class="flow__node flow__node--decision">Human Review</div>
-                        <div class="flow__arrow"><i class="fas fa-arrow-right"></i></div>
-                        <div class="flow__node flow__node--agent">Agent₂</div>
-                        <div class="flow__arrow"><i class="fas fa-arrow-right"></i></div>
-                        <div class="flow__node flow__node--end">Output</div>
-                    </div>
-                </div>
-
-                <!-- Backend Systems -->
-                <div class="expertise__card animate-on-scroll" id="expertise-backend">
-                    <div class="card-glow"></div>
-                    <div class="expertise__icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3 class="expertise__card-title">Backend Systems</h3>
-                    <p class="expertise__card-desc">
-                        High-performance REST APIs and microservices architecture.
-                        Battle-tested systems serving millions of requests.
-                    </p>
-                    <div class="expertise__tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">Java</span>
-                        <span class="tag">Spring Boot</span>
-                    </div>
-                    <div class="expertise__code-snippet">
-                        <code>
-<span class="token-decorator">@app.post</span>(<span class="token-string">"/api/v1/agents/invoke"</span>)
-<span class="token-keyword">async def</span> <span class="token-function">invoke_agent</span>(req: AgentRequest):
-    <span class="token-keyword">return await</span> orchestrator.execute(req)
-                        </code>
-                    </div>
-                </div>
-
-                <!-- Generative AI & RAG -->
-                <div class="expertise__card animate-on-scroll" id="expertise-rag">
-                    <div class="card-glow"></div>
-                    <div class="expertise__icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="expertise__card-title">Generative AI & RAG</h3>
-                    <p class="expertise__card-desc">
-                        Advanced RAG pipelines with vector search optimization.
-                        LLM benchmarking for cost and latency at production scale.
-                    </p>
-                    <div class="expertise__tags">
-                        <span class="tag">RAG Pipelines</span>
-                        <span class="tag">FAISS</span>
-                        <span class="tag">Chroma</span>
-                        <span class="tag">LLM Benchmarking</span>
-                    </div>
-                    <div class="expertise__pipeline">
-                        <div class="pipeline__step">
-                            <span class="pipeline__icon">📄</span>
-                            <span>Ingest</span>
-                        </div>
-                        <div class="pipeline__connector"></div>
-                        <div class="pipeline__step">
-                            <span class="pipeline__icon">🔢</span>
-                            <span>Embed</span>
-                        </div>
-                        <div class="pipeline__connector"></div>
-                        <div class="pipeline__step">
-                            <span class="pipeline__icon">🔍</span>
-                            <span>Retrieve</span>
-                        </div>
-                        <div class="pipeline__connector"></div>
-                        <div class="pipeline__step">
-                            <span class="pipeline__icon">🤖</span>
-                            <span>Generate</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Observability & Cloud -->
-                <div class="expertise__card animate-on-scroll" id="expertise-cloud">
-                    <div class="card-glow"></div>
-                    <div class="expertise__icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3 class="expertise__card-title">Observability & Cloud</h3>
-                    <p class="expertise__card-desc">
-                        End-to-end LLM tracing, evaluation pipelines, and scalable 
-                        cloud-native data streaming architectures.
-                    </p>
-                    <div class="expertise__tags">
-                        <span class="tag">LangSmith</span>
-                        <span class="tag">AWS</span>
-                        <span class="tag">Kinesis Firehose</span>
-                        <span class="tag">ELK Stack</span>
-                    </div>
-                    <div class="expertise__metrics">
-                        <div class="metric">
-                            <span class="metric__value">99.9%</span>
-                            <span class="metric__label">Uptime SLA</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric__value">&lt;200ms</span>
-                            <span class="metric__label">P95 Latency</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric__value">10M+</span>
-                            <span class="metric__label">Events/Day</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== TECH STACK MARQUEE ===== -->
-    <section class="tech-marquee">
-        <div class="marquee-track">
-            <div class="marquee-content">
-                <span class="marquee-item"><i class="fab fa-python"></i> Python</span>
-                <span class="marquee-item"><i class="fab fa-java"></i> Java</span>
-                <span class="marquee-item"><i class="fas fa-brain"></i> LangGraph</span>
-                <span class="marquee-item"><i class="fas fa-robot"></i> CrewAI</span>
-                <span class="marquee-item"><i class="fas fa-bolt"></i> FastAPI</span>
-                <span class="marquee-item"><i class="fas fa-leaf"></i> Spring Boot</span>
-                <span class="marquee-item"><i class="fab fa-aws"></i> AWS</span>
-                <span class="marquee-item"><i class="fas fa-database"></i> FAISS</span>
-                <span class="marquee-item"><i class="fas fa-chart-line"></i> LangSmith</span>
-                <span class="marquee-item"><i class="fab fa-react"></i> React</span>
-                <span class="marquee-item"><i class="fab fa-docker"></i> Docker</span>
-                <span class="marquee-item"><i class="fas fa-fire"></i> Kinesis</span>
-                <!-- Duplicate for seamless loop -->
-                <span class="marquee-item"><i class="fab fa-python"></i> Python</span>
-                <span class="marquee-item"><i class="fab fa-java"></i> Java</span>
-                <span class="marquee-item"><i class="fas fa-brain"></i> LangGraph</span>
-                <span class="marquee-item"><i class="fas fa-robot"></i> CrewAI</span>
-                <span class="marquee-item"><i class="fas fa-bolt"></i> FastAPI</span>
-                <span class="marquee-item"><i class="fas fa-leaf"></i> Spring Boot</span>
-                <span class="marquee-item"><i class="fab fa-aws"></i> AWS</span>
-                <span class="marquee-item"><i class="fas fa-database"></i> FAISS</span>
-                <span class="marquee-item"><i class="fas fa-chart-line"></i> LangSmith</span>
-                <span class="marquee-item"><i class="fab fa-react"></i> React</span>
-                <span class="marquee-item"><i class="fab fa-docker"></i> Docker</span>
-                <span class="marquee-item"><i class="fas fa-fire"></i> Kinesis</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PROJECTS SECTION ===== -->
-    <section class="projects" id="projects">
-        <div class="section__container">
-            <div class="section__header animate-on-scroll">
-                <span class="section__label">// FEATURED_PROJECTS</span>
-                <h2 class="section__title">Agentic Systems <span class="text-gradient">in Action</span></h2>
-                <div class="section__line"></div>
-                <p class="section__subtitle">Not demos — these are production-grade systems solving real problems.</p>
-            </div>
-
-            <div class="projects__grid">
-                <!-- Coder Buddy -->
-                <article class="project__card animate-on-scroll" id="project-coder-buddy">
-                    <div class="project__card-shine"></div>
-                    <div class="project__number">01</div>
-                    <div class="project__header">
-                        <div class="project__type">
-                            <span class="project__type-dot project__type-dot--agentic"></span>
-                            Agentic AI · LangGraph
-                        </div>
-                        <div class="project__links">
-                            <a href="https://github.com/gowdul30" class="project__link-icon" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project__title">Coder Buddy</h3>
-                    <p class="project__desc">
-                        An AI multi-agent developer productivity tool that translates natural language 
-                        into complete project scaffolds — from architecture to implementation.
-                    </p>
-                    <div class="project__impact">
-                        <div class="project__impact-stat">
-                            <span class="project__impact-value">~60%</span>
-                            <span class="project__impact-label">Coding Time Reduction</span>
-                        </div>
-                    </div>
-                    <div class="project__architecture">
-                        <div class="arch__flow">
-                            <div class="arch__node arch__node--input">
-                                <span class="arch__node-icon">💬</span>
-                                <span>Natural Language</span>
+                        <div class="project__metrics" aria-label="Project impact metrics">
+                            <div class="project__metric">
+                                <span class="project__metric-value project__metric-value--positive">+40%</span>
+                                <span class="project__metric-label">Issue Resolution Speed</span>
                             </div>
-                            <div class="arch__connector">
-                                <div class="arch__connector-line"></div>
-                                <div class="arch__connector-arrow">▼</div>
+                            <div class="project__metric">
+                                <span class="project__metric-value project__metric-value--positive">&minus;50%</span>
+                                <span class="project__metric-label">Ingestion Latency</span>
                             </div>
-                            <div class="arch__node arch__node--process">
-                                <span class="arch__node-icon">🧠</span>
-                                <span>LangGraph Orchestrator</span>
+                            <div class="project__metric">
+                                <span class="project__metric-value project__metric-value--positive">&minus;80%</span>
+                                <span class="project__metric-label">Memory Footprint</span>
                             </div>
-                            <div class="arch__connector">
-                                <div class="arch__connector-line"></div>
-                                <div class="arch__connector-arrow">▼</div>
-                            </div>
-                            <div class="arch__agents">
-                                <div class="arch__agent">Planner</div>
-                                <div class="arch__agent">Coder</div>
-                                <div class="arch__agent">Reviewer</div>
-                            </div>
-                            <div class="arch__connector">
-                                <div class="arch__connector-line"></div>
-                                <div class="arch__connector-arrow">▼</div>
-                            </div>
-                            <div class="arch__node arch__node--output">
-                                <span class="arch__node-icon">📦</span>
-                                <span>Project Scaffold</span>
+                            <div class="project__metric">
+                                <span class="project__metric-value">979</span>
+                                <span class="project__metric-label">Passing Unit Tests</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="project__tech">
-                        <span class="tag tag--sm">LangGraph</span>
-                        <span class="tag tag--sm">Python</span>
-                        <span class="tag tag--sm">Multi-Agent</span>
-                        <span class="tag tag--sm">StateGraph</span>
-                    </div>
-                </article>
 
-                <!-- Automated Event Planner -->
-                <article class="project__card animate-on-scroll" id="project-event-planner">
-                    <div class="project__card-shine"></div>
-                    <div class="project__number">02</div>
-                    <div class="project__header">
-                        <div class="project__type">
-                            <span class="project__type-dot project__type-dot--autonomous"></span>
-                            Autonomous · CrewAI
+                        <div class="project__tech-row">
+                            <span class="tech-tag">LangGraph</span>
+                            <span class="tech-tag">GPT-4o</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">MongoDB Atlas</span>
+                            <span class="tech-tag">ChromaDB</span>
+                            <span class="tech-tag">Google Embeddings</span>
+                            <span class="tech-tag">WebSockets</span>
+                            <span class="tech-tag">MS Presidio</span>
+                            <span class="tech-tag">Pydantic</span>
                         </div>
-                        <div class="project__links">
-                            <a href="https://github.com/gowdul30" class="project__link-icon" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project__title">Automated Event Planner</h3>
-                    <p class="project__desc">
-                        A fully autonomous CrewAI system with specialized agents executing real-world
-                        event workflows from venue selection to marketing — end-to-end.
-                    </p>
-                    <div class="project__impact">
-                        <div class="project__impact-stat">
-                            <span class="project__impact-value">100%</span>
-                            <span class="project__impact-label">Autonomous Execution</span>
-                        </div>
-                    </div>
-                    <div class="project__agents-grid">
-                        <div class="project__agent-card">
-                            <span class="project__agent-icon">🏛️</span>
-                            <span class="project__agent-name">Venue Agent</span>
-                            <span class="project__agent-status">● Active</span>
-                        </div>
-                        <div class="project__agent-card">
-                            <span class="project__agent-icon">🚚</span>
-                            <span class="project__agent-name">Logistics Agent</span>
-                            <span class="project__agent-status">● Active</span>
-                        </div>
-                        <div class="project__agent-card">
-                            <span class="project__agent-icon">📣</span>
-                            <span class="project__agent-name">Marketing Agent</span>
-                            <span class="project__agent-status">● Active</span>
-                        </div>
-                    </div>
-                    <div class="project__tech">
-                        <span class="tag tag--sm">CrewAI</span>
-                        <span class="tag tag--sm">Python</span>
-                        <span class="tag tag--sm">Autonomous</span>
-                        <span class="tag tag--sm">Multi-Agent</span>
-                    </div>
-                </article>
-
-                <!-- ResumeTailor -->
-                <article class="project__card animate-on-scroll" id="project-resume-tailor">
-                    <div class="project__card-shine"></div>
-                    <div class="project__number">03</div>
-                    <div class="project__header">
-                        <div class="project__type">
-                            <span class="project__type-dot project__type-dot--fullstack"></span>
-                            Full-Stack · AI Web App
-                        </div>
-                        <div class="project__links">
-                            <a href="https://github.com/gowdul30" class="project__link-icon" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project__title">ResumeTailor</h3>
-                    <p class="project__desc">
-                        A full-stack AI web application that intelligently tailors resumes to specific
-                        job descriptions using advanced prompt engineering with the Claude API.
-                    </p>
-                    <div class="project__impact">
-                        <div class="project__impact-stat">
-                            <span class="project__impact-value">AI-Powered</span>
-                            <span class="project__impact-label">Resume Optimization</span>
-                        </div>
-                    </div>
-                    <div class="project__stack-visual">
-                        <div class="stack__layer stack__layer--frontend">
-                            <span class="stack__layer-label">Frontend</span>
-                            <span class="stack__layer-tech">React</span>
-                        </div>
-                        <div class="stack__layer stack__layer--backend">
-                            <span class="stack__layer-label">Backend</span>
-                            <span class="stack__layer-tech">FastAPI</span>
-                        </div>
-                        <div class="stack__layer stack__layer--ai">
-                            <span class="stack__layer-label">AI Engine</span>
-                            <span class="stack__layer-tech">Claude API</span>
-                        </div>
-                    </div>
-                    <div class="project__tech">
-                        <span class="tag tag--sm">FastAPI</span>
-                        <span class="tag tag--sm">React</span>
-                        <span class="tag tag--sm">Claude API</span>
-                        <span class="tag tag--sm">Full-Stack</span>
-                    </div>
-                </article>
-
-                <!-- Customer Interaction Insights (Featured) -->
-                <article class="project__card project__card--featured animate-on-scroll" id="project-insights">
-                    <div class="project__card-shine"></div>
-                    <div class="project__number">04</div>
-                    <div class="project__header">
-                        <div class="project__type">
-                            <span class="project__type-dot project__type-dot--enterprise"></span>
-                            Enterprise · Production LLM
-                        </div>
-                        <span class="project__badge">Enterprise</span>
-                    </div>
-                    <h3 class="project__title">Customer Interaction Insights</h3>
-                    <p class="project__desc">
-                        A production LLM pipeline for Verizon & Wells Fargo automating root-cause 
-                        detection and callback intent extraction from millions of customer interactions.
-                    </p>
-                    <div class="project__impact project__impact--multi">
-                        <div class="project__impact-stat">
-                            <span class="project__impact-value">40%</span>
-                            <span class="project__impact-label">Faster Resolution</span>
-                        </div>
-                        <div class="project__impact-stat">
-                            <span class="project__impact-value">50%</span>
-                            <span class="project__impact-label">Latency Improvement</span>
-                        </div>
-                    </div>
-                    <div class="project__enterprise-flow">
-                        <div class="ent__step">
-                            <div class="ent__step-header">01</div>
-                            <div class="ent__step-label">Call Data Ingestion</div>
-                        </div>
-                        <div class="ent__step-connector"></div>
-                        <div class="ent__step">
-                            <div class="ent__step-header">02</div>
-                            <div class="ent__step-label">LLM Processing</div>
-                        </div>
-                        <div class="ent__step-connector"></div>
-                        <div class="ent__step">
-                            <div class="ent__step-header">03</div>
-                            <div class="ent__step-label">Root-Cause Detection</div>
-                        </div>
-                        <div class="ent__step-connector"></div>
-                        <div class="ent__step">
-                            <div class="ent__step-header">04</div>
-                            <div class="ent__step-label">Intent Extraction</div>
-                        </div>
-                    </div>
-                    <div class="project__tech">
-                        <span class="tag tag--sm">LLM Pipeline</span>
-                        <span class="tag tag--sm">AWS</span>
-                        <span class="tag tag--sm">Kinesis</span>
-                        <span class="tag tag--sm">Production</span>
                     </div>
 
-                    <!-- Deep Dive Toggle Button -->
-                    <button class="deepdive__toggle" id="deepdiveToggle" aria-expanded="false" aria-controls="deepdivePanel">
-                        <span class="deepdive__toggle-text">
-                            <i class="fas fa-microscope"></i>
-                            Deep Dive — Proof of Work
+                    <button class="case-study-toggle" data-target="case-01" aria-expanded="false" aria-controls="case-01" id="toggle-01">
+                        <span class="case-study-toggle__text">
+                            <i class="fas fa-microscope" aria-hidden="true"></i>
+                            Full Case Study — Architecture, Tradeoffs &amp; Proof of Work
                         </span>
-                        <span class="deepdive__toggle-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
+                        <span class="case-study-toggle__icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
                     </button>
 
-                    <!-- Expandable Deep Dive Panel -->
-                    <div class="deepdive" id="deepdivePanel" aria-hidden="true">
-                        <div class="deepdive__inner">
+                    <div class="case-study" id="case-01" hidden>
+                        <div class="case-study__inner">
 
-                            <!-- Meta Bar -->
-                            <div class="deepdive__meta">
-                                <div class="deepdive__meta-item">
-                                    <i class="fas fa-building"></i>
-                                    <span>Accenture Solutions</span>
+                            <div class="case-study__block">
+                                <div class="case-study__block-header">
+                                    <span class="case-study__block-num">01</span>
+                                    <h4>The Problem</h4>
                                 </div>
-                                <div class="deepdive__meta-item">
-                                    <i class="fas fa-user-tie"></i>
-                                    <span>Verizon & Wells Fargo</span>
-                                </div>
-                                <div class="deepdive__meta-item">
-                                    <i class="fas fa-code"></i>
-                                    <span>Senior AI & Backend Engineer</span>
-                                </div>
+                                <p>Enterprise call centers for Verizon and Wells Fargo process millions of customer interactions daily. Extracting actionable intelligence — root causes of frustration, compliance violations, urgent callback intents — was a manual, inconsistent process taking hours. Critical escalations went undetected. I was tasked with building a system to automate this at production scale, with sub-5-second latency from ingest to analyst dashboard.</p>
                             </div>
 
-                            <!-- Metrics Bar -->
-                            <div class="deepdive__metrics">
-                                <div class="deepdive__metric">
-                                    <span class="deepdive__metric-value">+40%</span>
-                                    <span class="deepdive__metric-label">Resolution Speed</span>
+                            <div class="case-study__block">
+                                <div class="case-study__block-header">
+                                    <span class="case-study__block-num">02</span>
+                                    <h4>Architecture Decision</h4>
                                 </div>
-                                <div class="deepdive__metric">
-                                    <span class="deepdive__metric-value">-50%</span>
-                                    <span class="deepdive__metric-label">Ingestion Latency</span>
-                                </div>
-                                <div class="deepdive__metric">
-                                    <span class="deepdive__metric-value">-80%</span>
-                                    <span class="deepdive__metric-label">Memory Footprint</span>
-                                </div>
-                                <div class="deepdive__metric">
-                                    <span class="deepdive__metric-value">979</span>
-                                    <span class="deepdive__metric-label">Passing Unit Tests</span>
-                                </div>
-                            </div>
+                                <p>A single monolithic LLM prompt suffers accuracy degradation when handling multi-topic calls. I chose a <strong>modular parallel-agent pattern</strong> using LangGraph's <code>StateGraph</code> — five specialist agents running concurrently, each with a focused prompt and structured output schema enforced via <strong>Instructor + Pydantic</strong>. An Aggregator node merges their outputs into a single call record.</p>
 
-                            <!-- 4 Elements Grid -->
-                            <div class="deepdive__elements">
-                                <div class="deepdive__element">
-                                    <div class="deepdive__element-header">
-                                        <span class="deepdive__element-num">01</span>
-                                        <h4 class="deepdive__element-title">What was the problem or brief?</h4>
+                                <div class="arch-diagram" role="img" aria-label="System architecture: webhook ingest to LangGraph to MongoDB to WebSocket dashboard">
+                                    <div class="arch-diagram__title">
+                                        <i class="fas fa-network-wired" aria-hidden="true"></i>
+                                        Stateful Real-Time Ingestion Pipeline
                                     </div>
-                                    <p class="deepdive__element-content">
-                                        Enterprise call centers for clients like Verizon and Wells Fargo process millions of customer calls daily, but extracting actionable insights—such as the exact root causes of customer frustration, compliance failures, and urgent callback intents—was a slow, manual process. Without a scalable, persistent automated system, critical customer escalations went unnoticed, leading to customer churn, high operational costs, and prolonged issue-resolution times. I was tasked with building a high-throughput, production-grade Generative AI pipeline to ingest call transcripts, perform granular conversational analysis, and deliver real-time prescriptive insights to business leaders.
-                                    </p>
-                                </div>
-                                <div class="deepdive__element">
-                                    <div class="deepdive__element-header">
-                                        <span class="deepdive__element-num">02</span>
-                                        <h4 class="deepdive__element-title">How did you approach it?</h4>
+                                    <div class="arch-diagram__flow">
+                                        <div class="arch-node arch-node--input">
+                                            <span class="arch-node__icon">📥</span>
+                                            <span class="arch-node__name">Webhook Ingest</span>
+                                            <code class="arch-node__tech">POST /api/ingest</code>
+                                        </div>
+                                        <div class="arch-arrow" aria-hidden="true">→</div>
+                                        <div class="arch-node arch-node--process">
+                                            <span class="arch-node__icon">🧠</span>
+                                            <span class="arch-node__name">LangGraph Core</span>
+                                            <code class="arch-node__tech">5 Parallel Agents</code>
+                                        </div>
+                                        <div class="arch-arrow" aria-hidden="true">→</div>
+                                        <div class="arch-node arch-node--storage">
+                                            <span class="arch-node__icon">🍃</span>
+                                            <span class="arch-node__name">MongoDB Atlas</span>
+                                            <code class="arch-node__tech">Document Persistence</code>
+                                        </div>
+                                        <div class="arch-arrow" aria-hidden="true">→</div>
+                                        <div class="arch-node arch-node--output">
+                                            <span class="arch-node__icon">⚡</span>
+                                            <span class="arch-node__name">WebSocket + ChromaDB</span>
+                                            <code class="arch-node__tech">Real-Time + Vector Search</code>
+                                        </div>
                                     </div>
-                                    <p class="deepdive__element-content">
-                                        Instead of a monolithic LLM prompt that would suffer from accuracy degradation, I architected a modular multi-agent system using LangGraph with five specialized, parallel agents (Root Cause, Escalation, Sentiment, Action Items, and Quality Assurance). To deploy on resource-constrained hosting (Render's 512MB free tier), I switched from local HuggingFace embeddings to cloud-hosted Google Generative AI Embeddings (<code>models/text-embedding-004</code>), eliminating heavy PyTorch/Transformer dependencies to save over 400MB of RAM. Additionally, I designed a dual-storage scheme: using MongoDB Atlas for persistent call document records and ChromaDB for semantic vector retrieval.
-                                    </p>
-                                </div>
-                                <div class="deepdive__element">
-                                    <div class="deepdive__element-header">
-                                        <span class="deepdive__element-num">03</span>
-                                        <h4 class="deepdive__element-title">What did you actually do?</h4>
-                                    </div>
-                                    <p class="deepdive__element-content">
-                                        I implemented the FastAPI stateful backend and the live <code>/api/ingest</code> endpoint, which feeds incoming raw transcripts directly into the LangGraph pipeline and maps the output Pydantic schema into a dashboard-compatible call record. I built database adapters in Python utilizing <code>pymongo</code> to persist records on MongoDB Atlas, alongside a vector store service that embeds transcripts on the fly using the Google API. Finally, I replaced mock streaming with an active WebSocket broadcaster that pushes live-processed call updates directly to the React dashboard, and authored database migration and seeding scripts to ensure consistent startup states.
-                                    </p>
-                                </div>
-                                <div class="deepdive__element">
-                                    <div class="deepdive__element-header">
-                                        <span class="deepdive__element-num">04</span>
-                                        <h4 class="deepdive__element-title">What was the result?</h4>
-                                    </div>
-                                    <p class="deepdive__element-content">
-                                        The updated architecture successfully eliminated local CPU embedding constraints, cutting memory footprint by 80% to allow seamless, stable cloud deployment on Render within a 512MB limit. By introducing a persistent MongoDB Atlas layer, we achieved enterprise-grade data durability and scaled the platform to handle live, real-time incoming call ingestions rather than mock data streams. The resulting system now executes speech transcript extraction, agent scoring, MongoDB storage, vector embedding, and real-time dashboard updates via WebSockets in less than 5 seconds.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Architecture Flow -->
-                            <div class="deepdive__architecture">
-                                <h4 class="deepdive__architecture-title">
-                                    <i class="fas fa-network-wired"></i>
-                                    Stateful Real-Time Ingestion Pipeline
-                                </h4>
-                                <div class="deepdive__flow">
-                                    <div class="deepdive__flow-node">
-                                        <span class="deepdive__flow-icon">📥</span>
-                                        <span class="deepdive__flow-name">Webhook Ingest</span>
-                                        <span class="deepdive__flow-tech">POST /api/ingest</span>
-                                    </div>
-                                    <div class="deepdive__flow-arrow">
-                                        <div class="deepdive__flow-arrow-line"></div>
-                                        <div class="deepdive__flow-arrow-tip">▶</div>
-                                    </div>
-                                    <div class="deepdive__flow-node deepdive__flow-node--accent">
-                                        <span class="deepdive__flow-icon">🧠</span>
-                                        <span class="deepdive__flow-name">LangGraph Core</span>
-                                        <span class="deepdive__flow-tech">5 Specialist Agents</span>
-                                    </div>
-                                    <div class="deepdive__flow-arrow">
-                                        <div class="deepdive__flow-arrow-line"></div>
-                                        <div class="deepdive__flow-arrow-tip">▶</div>
-                                    </div>
-                                    <div class="deepdive__flow-node">
-                                        <span class="deepdive__flow-icon">🍃</span>
-                                        <span class="deepdive__flow-name">MongoDB Atlas</span>
-                                        <span class="deepdive__flow-tech">Call Document DB</span>
-                                    </div>
-                                    <div class="deepdive__flow-arrow">
-                                        <div class="deepdive__flow-arrow-line"></div>
-                                        <div class="deepdive__flow-arrow-tip">▶</div>
-                                    </div>
-                                    <div class="deepdive__flow-node">
-                                        <span class="deepdive__flow-icon">⚡</span>
-                                        <span class="deepdive__flow-name">Chroma & WS</span>
-                                        <span class="deepdive__flow-tech">Google Embed / WebSockets</span>
+                                    <div class="arch-diagram__sidebar">
+                                        <div class="arch-sidebar-agents">
+                                            <div class="arch-agent-pill">Root Cause Agent</div>
+                                            <div class="arch-agent-pill">Escalation Agent</div>
+                                            <div class="arch-agent-pill">Sentiment Agent</div>
+                                            <div class="arch-agent-pill">Action Items Agent</div>
+                                            <div class="arch-agent-pill">QA Agent</div>
+                                            <div class="arch-agent-pill arch-agent-pill--aggregator">↳ Aggregator</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Tech Stack -->
-                            <div class="deepdive__techstack">
-                                <span class="deepdive__techstack-title">Full Tech Stack:</span>
-                                <div class="deepdive__techstack-badges">
-                                    <span class="deepdive__tech-badge"><i class="fas fa-brain"></i> LangGraph</span>
-                                    <span class="deepdive__tech-badge"><i class="fas fa-bolt"></i> FastAPI</span>
-                                    <span class="deepdive__tech-badge"><i class="fas fa-leaf"></i> MongoDB Atlas</span>
-                                    <span class="deepdive__tech-badge"><i class="fas fa-database"></i> ChromaDB</span>
-                                    <span class="deepdive__tech-badge"><i class="fab fa-google"></i> Google Embeddings</span>
-                                    <span class="deepdive__tech-badge"><i class="fab fa-react"></i> React 18 & WebSockets</span>
-                                    <span class="deepdive__tech-badge"><i class="fas fa-shield-alt"></i> MS Presidio</span>
-                                    <span class="deepdive__tech-badge"><i class="fas fa-check-double"></i> Pydantic / Instructor</span>
+                            <div class="case-study__block">
+                                <div class="case-study__block-header">
+                                    <span class="case-study__block-num">03</span>
+                                    <h4>Key Tradeoffs &amp; Decisions</h4>
+                                </div>
+                                <div class="tradeoffs-grid">
+                                    <div class="tradeoff-card">
+                                        <div class="tradeoff-card__decision">Local Embeddings → Cloud API</div>
+                                        <div class="tradeoff-card__context">Render's 512MB free-tier made local HuggingFace/PyTorch embeddings impossible. Switched to Google Generative AI Embeddings (<code>text-embedding-004</code>), eliminating heavy PyTorch dependency.</div>
+                                        <div class="tradeoff-card__outcome tradeoff-card__outcome--win">Result: −80% memory footprint. Stable cloud deployment within the 512MB constraint.</div>
+                                    </div>
+                                    <div class="tradeoff-card">
+                                        <div class="tradeoff-card__decision">Monolith Prompt → Parallel Agents</div>
+                                        <div class="tradeoff-card__context">Single-prompt approaches degrade when a call covers multiple topics simultaneously (billing + network + escalation). Parallel specialist agents maintain focus per domain.</div>
+                                        <div class="tradeoff-card__outcome tradeoff-card__outcome--win">Result: Higher per-domain accuracy. Pydantic-enforced structured outputs eliminated hallucinated JSON.</div>
+                                    </div>
+                                    <div class="tradeoff-card">
+                                        <div class="tradeoff-card__decision">Mock Streams → Live WebSocket Broadcaster</div>
+                                        <div class="tradeoff-card__context">Initial mock data wasn't production-representative and blocked real-time dashboard integration. Built a WebSocket broadcaster pushing live call updates directly to the React dashboard.</div>
+                                        <div class="tradeoff-card__outcome tradeoff-card__outcome--win">Result: End-to-end latency from ingest to analyst dashboard under 5 seconds.</div>
+                                    </div>
                                 </div>
                             </div>
 
+                            <div class="case-study__block">
+                                <div class="case-study__block-header">
+                                    <span class="case-study__block-num">04</span>
+                                    <h4>What I'd Improve Next</h4>
+                                </div>
+                                <ul class="improvement-list">
+                                    <li>Add an evaluation pipeline using <strong>LangSmith</strong> traces to benchmark each specialist agent's output quality independently with RAGAS-style metrics</li>
+                                    <li>Implement <strong>A2A (Agent-to-Agent)</strong> routing so agents can escalate sub-tasks to each other based on confidence scores, rather than fixed parallel execution</li>
+                                    <li>Layer a <strong>knowledge graph</strong> (Neo4j) to persist entity relationships across call sessions for longitudinal customer analysis</li>
+                                    <li>Replace Presidio's default PII rules with fine-tuned <strong>NER classifiers</strong> specific to financial services regulatory requirements</li>
+                                </ul>
+                            </div>
+
+                            <div class="case-study__stack">
+                                <span class="case-study__stack-label">Full Technology Stack</span>
+                                <div class="case-study__stack-grid">
+                                    <span class="stack-badge"><i class="fas fa-brain" aria-hidden="true"></i> LangGraph StateGraph</span>
+                                    <span class="stack-badge">GPT-4o &middot; Llama 3 70B (vLLM)</span>
+                                    <span class="stack-badge"><i class="fas fa-bolt" aria-hidden="true"></i> FastAPI (async)</span>
+                                    <span class="stack-badge">MongoDB Atlas (pymongo)</span>
+                                    <span class="stack-badge">ChromaDB + Google Embeddings</span>
+                                    <span class="stack-badge">Pydantic v2 &middot; Instructor</span>
+                                    <span class="stack-badge">Microsoft Presidio (PII)</span>
+                                    <span class="stack-badge">Keycloak SSO</span>
+                                    <span class="stack-badge">LangSmith &middot; LangFuse</span>
+                                    <span class="stack-badge"><i class="fab fa-react" aria-hidden="true"></i> React 18 + WebSockets</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
+
+            <!-- ─── Project 02: Coder Buddy ─── -->
+            <article class="project reveal" id="project-02">
+                <div class="project__header">
+                    <div class="project__meta">
+                        <span class="project__number" aria-label="Project 2">02</span>
+                        <div class="project__tags">
+                            <span class="tag tag--agentic">Agentic</span>
+                            <span class="tag tag--autonomous">Autonomous</span>
+                        </div>
+                    </div>
+                    <div class="project__links">
+                        <a href="https://github.com/gowdul30" class="project__link" target="_blank" rel="noopener noreferrer" aria-label="View project on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project__body">
+                    <div class="project__summary">
+                        <div class="project__category">
+                            <span class="category-dot category-dot--agentic" aria-hidden="true"></span>
+                            Autonomous Coding Agent &middot; LangGraph StateGraph + HITL Patterns
+                        </div>
+                        <h3 class="project__title">Coder Buddy</h3>
+                        <p class="project__desc">
+                            An AI developer productivity agent that translates natural language requirements into
+                            complete, production-ready project scaffolds. A 3-agent pipeline (Planner → Human Checkpoint
+                            → Coder → Reviewer) with stateful checkpointing via MemorySaver, enabling session resumption
+                            and Human-in-the-Loop approval before committing compute to implementation.
+                        </p>
+
+                        <div class="project__metrics">
+                            <div class="project__metric">
+                                <span class="project__metric-value project__metric-value--positive">~60%</span>
+                                <span class="project__metric-label">Coding Time Reduction</span>
+                            </div>
+                            <div class="project__metric">
+                                <span class="project__metric-value">3</span>
+                                <span class="project__metric-label">Specialist Agents</span>
+                            </div>
+                            <div class="project__metric">
+                                <span class="project__metric-value">HITL</span>
+                                <span class="project__metric-label">Safety Checkpoint</span>
+                            </div>
+                        </div>
+
+                        <div class="project__tech-row">
+                            <span class="tech-tag">LangGraph</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">GPT-4o</span>
+                            <span class="tech-tag">StateGraph</span>
+                            <span class="tech-tag">MemorySaver</span>
+                            <span class="tech-tag">HITL Patterns</span>
+                            <span class="tech-tag">Pydantic</span>
+                        </div>
+                    </div>
+
+                    <button class="case-study-toggle" data-target="case-02" aria-expanded="false" aria-controls="case-02" id="toggle-02">
+                        <span class="case-study-toggle__text">
+                            <i class="fas fa-microscope" aria-hidden="true"></i>
+                            Full Case Study — Architecture, Tradeoffs &amp; Proof of Work
+                        </span>
+                        <span class="case-study-toggle__icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+
+                    <div class="case-study" id="case-02" hidden>
+                        <div class="case-study__inner">
+                            <div class="case-study__block">
+                                <div class="case-study__block-header">
+                                    <span class="case-study__block-num">01</span>
+                                    <h4>The Problem</h4>
+                                </div>
+                                <p>Developers waste significant time on project scaffolding — folder structures, boilerplate, CI pipelines, test harnesses. The bottleneck isn't typing speed; it's the cold-start decision overhead. Coder Buddy eliminates this by first reasoning about architecture, getting human approval, then implementing — never writing code on a misunderstood requirement.</p>
+                            </div>
+
+                            <div class="case-study__block">
+                                <div class="case-study__block-header">
+                                    <span class="case-study__block-num">02</span>
+                                    <h4>Architecture — HITL as a Safety Mechanism</h4>
+                                </div>
+                                <p>Built on LangGraph's <code>StateGraph</code> with <strong>interrupt nodes</strong> for Human-in-the-Loop checkpoints. The HITL checkpoint wasn't just a UX feature — it was the <strong>primary safety mechanism</strong>. Without it, the Coder agent runs on potentially misunderstood requirements, wasting tokens and producing unusable output. Forcing Planner output through human approval ensures architectural intent is correct before committing compute to implementation.</p>
+
+                                <div class="arch-diagram" role="img" aria-label="Coder Buddy pipeline: input to planner to human checkpoint to coder to reviewer">
+                                    <div class="arch-diagram__title">
+                                        <i class="fas fa-code-branch" aria-hidden="true"></i>
+                                        3-Agent Pipeline with HITL Safety Gate
+                                    </div>
+                                    <div class="arch-diagram__flow">
+                                        <div class="arch-node arch-node--input">
+                                            <span class="arch-node__icon">💬</span>
+                                            <span class="arch-node__name">Natural Language</span>
+                                        </div>
+                                        <div class="arch-arrow" aria-hidden="true">→</div>
+                                        <div class="arch-node arch-node--process">
+                                            <span class="arch-node__icon">📐</span>
+                                            <span class="arch-node__name">Planner Agent</span>
+                                            <code class="arch-node__tech">Architecture + Decisions</code>
+                                        </div>
+                                        <div class="arch-arrow" aria-hidden="true">→</div>
+                                        <div class="arch-node arch-node--hitl">
+                                            <span class="arch-node__icon">🧑</span>
+                                            <span class="arch-node__name">Human Checkpoint</span>
+                                            <code class="arch-node__tech">Approve / Revise</code>
+                                        </div>
+                                        <div class="arch-arrow" aria-hidden="true">→</div>
+                                        <div class="arch-node arch-node--process">
+                                            <span class="arch-node__icon">💻</span>
+                                            <span class="arch-node__name">Coder Agent</span>
+                                            <code class="arch-node__tech">Implementation</code>
+                                        </div>
+                                        <div class="arch-arrow" aria-hidden="true">→</div>
+                                        <div class="arch-node arch-node--output">
+                                            <span class="arch-node__icon">🔍</span>
+                                            <span class="arch-node__name">Reviewer Agent</span>
+                                            <code class="arch-node__tech">Quality Gate</code>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="case-study__stack">
+                                <span class="case-study__stack-label">Full Technology Stack</span>
+                                <div class="case-study__stack-grid">
+                                    <span class="stack-badge">LangGraph StateGraph + Interrupt Nodes</span>
+                                    <span class="stack-badge">MemorySaver (Session Checkpoints)</span>
+                                    <span class="stack-badge">GPT-4o (Planner + Coder)</span>
+                                    <span class="stack-badge">GPT-4o-mini (Reviewer — cost optimized)</span>
+                                    <span class="stack-badge">Python 3.11</span>
+                                    <span class="stack-badge">Pydantic v2 (Schema Enforcement)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ─── Project 03: Automated Event Planner ─── -->
+            <article class="project reveal" id="project-03">
+                <div class="project__header">
+                    <div class="project__meta">
+                        <span class="project__number" aria-label="Project 3">03</span>
+                        <div class="project__tags">
+                            <span class="tag tag--autonomous">Autonomous</span>
+                            <span class="tag tag--workflow">Multi-Agent</span>
+                        </div>
+                    </div>
+                    <div class="project__links">
+                        <a href="https://github.com/gowdul30" class="project__link" target="_blank" rel="noopener noreferrer" aria-label="View project on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project__body">
+                    <div class="project__summary">
+                        <div class="project__category">
+                            <span class="category-dot category-dot--workflow" aria-hidden="true"></span>
+                            Fully Autonomous Multi-Agent Workflow &middot; CrewAI + Tool Calling
+                        </div>
+                        <h3 class="project__title">Automated Event Planner</h3>
+                        <p class="project__desc">
+                            A fully autonomous CrewAI system with specialized, role-defined agents executing real-world
+                            event planning workflows — venue selection, logistics coordination, and marketing copy
+                            generation — end-to-end without human intervention, using live tool integrations including
+                            real-time search APIs.
+                        </p>
+
+                        <div class="project__metrics">
+                            <div class="project__metric">
+                                <span class="project__metric-value">100%</span>
+                                <span class="project__metric-label">Autonomous Execution</span>
+                            </div>
+                            <div class="project__metric">
+                                <span class="project__metric-value">5</span>
+                                <span class="project__metric-label">Specialized Agents</span>
+                            </div>
+                            <div class="project__metric">
+                                <span class="project__metric-value">Live</span>
+                                <span class="project__metric-label">Tool Integrations</span>
+                            </div>
+                        </div>
+
+                        <div class="project__tech-row">
+                            <span class="tech-tag">CrewAI</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Tool Calling</span>
+                            <span class="tech-tag">Serper API</span>
+                            <span class="tech-tag">GPT-4o</span>
+                            <span class="tech-tag">Role-Based Agents</span>
+                            <span class="tech-tag">Function Calling</span>
+                        </div>
+                    </div>
+
+                    <button class="case-study-toggle" data-target="case-03" aria-expanded="false" aria-controls="case-03" id="toggle-03">
+                        <span class="case-study-toggle__text">
+                            <i class="fas fa-microscope" aria-hidden="true"></i>
+                            Full Case Study — Architecture, Tradeoffs &amp; Proof of Work
+                        </span>
+                        <span class="case-study-toggle__icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+
+                    <div class="case-study" id="case-03" hidden>
+                        <div class="case-study__inner">
+                            <div class="case-study__block">
+                                <div class="case-study__block-header">
+                                    <span class="case-study__block-num">01</span>
+                                    <h4>Agent Specialization — Why It Matters</h4>
+                                </div>
+                                <p>In CrewAI, each agent has a defined <strong>role</strong>, <strong>goal</strong>, and <strong>backstory</strong> — these aren't cosmetic. They directly shape the LLM's system context and produce dramatically better output than a generic agent prompt. The Venue Agent reasons about location constraints differently from the Marketing Agent reasoning about audience psychology. This role separation is what enables coherent autonomous execution across complex, multi-domain workflows.</p>
+                            </div>
+
+                            <div class="case-study__block">
+                                <div class="case-study__block-header">
+                                    <span class="case-study__block-num">02</span>
+                                    <h4>Tool Calling Architecture</h4>
+                                </div>
+                                <p>Each agent is equipped with domain-specific tools: the Venue Agent uses <strong>Serper API</strong> to search for real locations; the Logistics Agent queries availability; the Marketing Agent uses content generation tools. This is <strong>function calling in a production multi-agent context</strong> — not LLM chat with fake data. The system uses real APIs, handling real results, with no hardcoded outputs.</p>
+                            </div>
+
+                            <div class="case-study__stack">
+                                <span class="case-study__stack-label">Full Technology Stack</span>
+                                <div class="case-study__stack-grid">
+                                    <span class="stack-badge">CrewAI Framework</span>
+                                    <span class="stack-badge">GPT-4o (Agent LLMs)</span>
+                                    <span class="stack-badge">Serper API (Live Search)</span>
+                                    <span class="stack-badge">Custom Tool Definitions</span>
+                                    <span class="stack-badge">Function Calling</span>
+                                    <span class="stack-badge">Python 3.11</span>
+                                    <span class="stack-badge">Role-Based Agent Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ─── Project 04: ResumeTailor ─── -->
+            <article class="project reveal" id="project-04">
+                <div class="project__header">
+                    <div class="project__meta">
+                        <span class="project__number" aria-label="Project 4">04</span>
+                        <div class="project__tags">
+                            <span class="tag tag--fullstack">Full-Stack</span>
+                            <span class="tag tag--applied">Applied AI</span>
+                        </div>
+                    </div>
+                    <div class="project__links">
+                        <a href="https://github.com/gowdul30" class="project__link" target="_blank" rel="noopener noreferrer" aria-label="View project on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project__body">
+                    <div class="project__summary">
+                        <div class="project__category">
+                            <span class="category-dot category-dot--fullstack" aria-hidden="true"></span>
+                            Full-Stack AI Application &middot; Anthropic Claude &middot; SSE Streaming
+                        </div>
+                        <h3 class="project__title">ResumeTailor</h3>
+                        <p class="project__desc">
+                            A full-stack web application using Anthropic's Claude API to intelligently tailor resumes
+                            to specific job descriptions. Implements a chain-of-thought prompt strategy (analyze JD →
+                            identify gaps → suggest targeted rewrites), with Server-Sent Events streaming responses
+                            token-by-token to eliminate perceived latency for long generations.
+                        </p>
+
+                        <div class="project__metrics">
+                            <div class="project__metric">
+                                <span class="project__metric-value">Claude</span>
+                                <span class="project__metric-label">Anthropic API</span>
+                            </div>
+                            <div class="project__metric">
+                                <span class="project__metric-value">SSE</span>
+                                <span class="project__metric-label">Streaming Response</span>
+                            </div>
+                            <div class="project__metric">
+                                <span class="project__metric-value">CoT</span>
+                                <span class="project__metric-label">Prompt Strategy</span>
+                            </div>
+                        </div>
+
+                        <div class="project__tech-row">
+                            <span class="tech-tag">Anthropic Claude API</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">React 18</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">SSE Streaming</span>
+                            <span class="tech-tag">Chain-of-Thought Prompting</span>
+                            <span class="tech-tag">Pydantic</span>
+                        </div>
+                    </div>
+
+                    <button class="case-study-toggle" data-target="case-04" aria-expanded="false" aria-controls="case-04" id="toggle-04">
+                        <span class="case-study-toggle__text">
+                            <i class="fas fa-microscope" aria-hidden="true"></i>
+                            Full Case Study — Architecture, Tradeoffs &amp; Proof of Work
+                        </span>
+                        <span class="case-study-toggle__icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+
+                    <div class="case-study" id="case-04" hidden>
+                        <div class="case-study__inner">
+                            <div class="case-study__block">
+                                <div class="case-study__block-header">
+                                    <span class="case-study__block-num">01</span>
+                                    <h4>Prompt Engineering Strategy</h4>
+                                </div>
+                                <p>The core challenge wasn't API connectivity — it was designing prompts that produce structured, accurate output without hallucinating experience the user doesn't have. Used a <strong>three-stage chain-of-thought approach</strong>: Stage 1 analyzes the JD and extracts key requirements. Stage 2 maps the user's existing experience against those requirements and identifies gaps. Stage 3 suggests targeted, honest rewrites that improve relevance without fabrication. Each stage is a separate prompt, not one mega-prompt — this prevents context contamination and makes each step debuggable.</p>
+                            </div>
+
+                            <div class="case-study__block">
+                                <div class="case-study__block-header">
+                                    <span class="case-study__block-num">02</span>
+                                    <h4>Streaming Implementation</h4>
+                                </div>
+                                <p>Used FastAPI's <code>StreamingResponse</code> with <strong>Server-Sent Events (SSE)</strong> to stream Claude's output token-by-token to the React frontend. This eliminated perceived latency — users see results appearing character by character rather than waiting for the full generation. For resume rewrites averaging 800 tokens, this reduces perceived wait from ~6 seconds to near-instant. The SSE connection is managed with proper <code>EventSource</code> handling on the frontend, with graceful error recovery.</p>
+                            </div>
+
+                            <div class="case-study__stack">
+                                <span class="case-study__stack-label">Full Technology Stack</span>
+                                <div class="case-study__stack-grid">
+                                    <span class="stack-badge">Anthropic Claude API (claude-3-5-sonnet)</span>
+                                    <span class="stack-badge">FastAPI + StreamingResponse (SSE)</span>
+                                    <span class="stack-badge">React 18 + EventSource API</span>
+                                    <span class="stack-badge">TypeScript</span>
+                                    <span class="stack-badge">Chain-of-Thought Prompting (3-stage)</span>
+                                    <span class="stack-badge">Pydantic v2 (Input Validation)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ─── Project 05: Sentinel RAG (Placeholder) ─── -->
+            <article class="project project--placeholder reveal" id="project-05">
+                <div class="project__header">
+                    <div class="project__meta">
+                        <span class="project__number" aria-label="Project 5">05</span>
+                        <div class="project__tags">
+                            <span class="tag tag--coming-soon">In Progress</span>
+                        </div>
+                    </div>
+                    <div class="project__links">
+                        <span class="project__link project__link--disabled" aria-disabled="true">
+                            <i class="fas fa-lock" aria-hidden="true"></i> Coming Soon
+                        </span>
+                    </div>
+                </div>
+
+                <div class="project__body">
+                    <div class="project__summary">
+                        <div class="project__category">
+                            <span class="category-dot category-dot--rag" aria-hidden="true"></span>
+                            Production RAG System &middot; Hybrid Search &middot; Auto-Evaluation Pipeline
+                        </div>
+                        <h3 class="project__title">Sentinel RAG — Enterprise Knowledge System</h3>
+                        <p class="project__desc">
+                            A production-grade RAG system with hybrid search (dense vector + sparse BM25 retrieval),
+                            knowledge graph integration for entity relationship persistence across sessions, and an
+                            automated evaluation pipeline using RAGAS metrics (context recall, answer faithfulness,
+                            relevance) for continuous quality monitoring in production.
+                        </p>
+
+                        <div class="project__metrics">
+                            <div class="project__metric">
+                                <span class="project__metric-value">Hybrid</span>
+                                <span class="project__metric-label">Vector + BM25 Search</span>
+                            </div>
+                            <div class="project__metric">
+                                <span class="project__metric-value">RAGAS</span>
+                                <span class="project__metric-label">Auto-Evaluation</span>
+                            </div>
+                            <div class="project__metric">
+                                <span class="project__metric-value">KG</span>
+                                <span class="project__metric-label">Knowledge Graph Layer</span>
+                            </div>
+                        </div>
+
+                        <div class="project__tech-row">
+                            <span class="tech-tag">Qdrant</span>
+                            <span class="tech-tag">BM25</span>
+                            <span class="tech-tag">RAGAS</span>
+                            <span class="tech-tag">Neo4j</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">LangSmith</span>
+                        </div>
+
+                        <div class="project__placeholder-note">
+                            <i class="fas fa-code-branch" aria-hidden="true"></i>
+                            Architecture designed, implementation in progress — ETA Q3 2026
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== ENGINEERING PHILOSOPHY ===== -->
+    <section class="philosophy" id="philosophy" aria-label="Engineering philosophy">
+        <div class="section__container">
+            <header class="section__header reveal">
+                <span class="section__eyebrow">// ENGINEERING_PHILOSOPHY</span>
+                <h2 class="section__title">How I <span class="text-accent">Think</span></h2>
+                <p class="section__subtitle">The mental models that drive every architectural decision.</p>
+            </header>
+
+            <div class="philosophy__grid">
+                <div class="philosophy__card reveal" id="phil-systems">
+                    <div class="philosophy__card-header">
+                        <code class="philosophy__fn">on_systems_thinking()</code>
+                    </div>
+                    <h3 class="philosophy__card-title">Build for failure modes, not happy paths</h3>
+                    <p class="philosophy__card-body">Every system I design starts with: "What breaks first under load?" Production AI systems fail in ways demos never reveal — context window overflows, embedding drift, tool call timeouts, hallucinated JSON that breaks downstream parsers. I design for these edge cases before writing a single happy-path line of code.</p>
+                    <div class="philosophy__card-proof">
+                        <span class="proof-label">Proof:</span> Switched from local HuggingFace embeddings to Google Cloud API mid-project to prevent OOM crashes on constrained hosting — before they happened in production.
+                    </div>
+                </div>
+
+                <div class="philosophy__card reveal reveal--delay-1" id="phil-tradeoffs">
+                    <div class="philosophy__card-header">
+                        <code class="philosophy__fn">on_tradeoffs(decision)</code>
+                    </div>
+                    <h3 class="philosophy__card-title">Every choice is a bet. Document it.</h3>
+                    <p class="philosophy__card-body">There is no "best" architecture — only the most appropriate for your constraints. I choose LangGraph over CrewAI when I need fine-grained state control. I choose GPT-4o-mini for high-frequency low-stakes calls. I choose ChromaDB over Pinecone on constrained budgets. Every tradeoff is a documented, reasoned decision — not a gut feel.</p>
+                    <div class="philosophy__card-proof">
+                        <span class="proof-label">Proof:</span> Benchmarked 4 LLMs (GPT-4o, Claude, Gemini, Llama) across accuracy, coherence, latency, and cost — selected the optimal model per workload, achieving −35% processing time.
+                    </div>
+                </div>
+
+                <div class="philosophy__card reveal reveal--delay-2" id="phil-production">
+                    <div class="philosophy__card-header">
+                        <code class="philosophy__fn">on_production(system)</code>
+                    </div>
+                    <h3 class="philosophy__card-title">A demo that crashes is a liability</h3>
+                    <p class="philosophy__card-body">I don't ship until I have observability. LangSmith traces for every LLM call. Pydantic schemas enforcing every agent output. 979 passing unit tests before deployment. Rate limiting to prevent cost explosions. If I can't see it, measure it, and debug it — it does not go to production.</p>
+                    <div class="philosophy__card-proof">
+                        <span class="proof-label">Proof:</span> Enforced 100 req/day rate limits on LLM API services, reducing server load by 40% and preventing uncontrolled cost bleed in a multi-tenant environment.
+                    </div>
+                </div>
+
+                <div class="philosophy__card reveal reveal--delay-3" id="phil-velocity">
+                    <div class="philosophy__card-header">
+                        <code class="philosophy__fn">on_velocity(constraint)</code>
+                    </div>
+                    <h3 class="philosophy__card-title">Move fast by writing things that don't break</h3>
+                    <p class="philosophy__card-body">Real velocity comes from trust in your foundations. I write typed Python with Pydantic everywhere. I add integration tests before features. I design APIs to be backwards-compatible from day one. The payoff: when we ship fast, we don't spend the next week undoing it. POC-to-production is a pattern, not an accident.</p>
+                    <div class="philosophy__card-proof">
+                        <span class="proof-label">Proof:</span> Three consecutive POC-to-production promotions: Kinesis streaming pipeline, Salesforce–WhatsApp integration, AI call analytics system.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TECHNICAL STACK ===== -->
+    <section class="stack" id="stack" aria-label="Technical stack">
+        <div class="section__container">
+            <header class="section__header reveal">
+                <span class="section__eyebrow">// TECHNICAL_STACK</span>
+                <h2 class="section__title">Tools I <span class="text-accent">Wield</span></h2>
+                <p class="section__subtitle">A curated stack chosen for production readiness, not hype.</p>
+            </header>
+
+            <div class="stack-grid">
+                <div class="stack-category reveal" id="stack-languages">
+                    <div class="stack-category__header">
+                        <span class="stack-category__icon" aria-hidden="true">{ }</span>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="stack-category__items">
+                        <div class="stack-item stack-item--primary"><i class="fab fa-python" aria-hidden="true"></i><span>Python</span></div>
+                        <div class="stack-item"><i class="fab fa-js-square" aria-hidden="true"></i><span>TypeScript</span></div>
+                        <div class="stack-item"><i class="fab fa-java" aria-hidden="true"></i><span>Java</span></div>
+                        <div class="stack-item"><i class="fas fa-database" aria-hidden="true"></i><span>SQL</span></div>
+                    </div>
+                </div>
+
+                <div class="stack-category reveal reveal--delay-1" id="stack-llms">
+                    <div class="stack-category__header">
+                        <span class="stack-category__icon" aria-hidden="true">🧠</span>
+                        <h3>LLMs &amp; APIs</h3>
+                    </div>
+                    <div class="stack-category__items">
+                        <div class="stack-item stack-item--primary"><span>GPT-4o &amp; GPT-4o-mini</span></div>
+                        <div class="stack-item stack-item--primary"><span>Claude 3.5 Sonnet</span></div>
+                        <div class="stack-item"><span>Llama 3 70B (vLLM self-hosted)</span></div>
+                        <div class="stack-item"><span>Gemini Pro</span></div>
+                        <div class="stack-item"><span>Google text-embedding-004</span></div>
+                        <div class="stack-item"><span>OpenAI Embeddings</span></div>
+                    </div>
+                </div>
+
+                <div class="stack-category reveal reveal--delay-2" id="stack-agents">
+                    <div class="stack-category__header">
+                        <span class="stack-category__icon" aria-hidden="true">⚡</span>
+                        <h3>Agent Frameworks</h3>
+                    </div>
+                    <div class="stack-category__items">
+                        <div class="stack-item stack-item--primary"><span>LangGraph (StateGraph, HITL)</span></div>
+                        <div class="stack-item stack-item--primary"><span>CrewAI</span></div>
+                        <div class="stack-item"><span>LangChain</span></div>
+                        <div class="stack-item"><span>Instructor (Structured Outputs)</span></div>
+                        <div class="stack-item"><span>Pydantic v2</span></div>
+                        <div class="stack-item"><span>MCP (Model Context Protocol)</span></div>
+                    </div>
+                </div>
+
+                <div class="stack-category reveal" id="stack-backend">
+                    <div class="stack-category__header">
+                        <span class="stack-category__icon" aria-hidden="true">⚙️</span>
+                        <h3>Backend &amp; APIs</h3>
+                    </div>
+                    <div class="stack-category__items">
+                        <div class="stack-item stack-item--primary"><span>FastAPI (async)</span></div>
+                        <div class="stack-item"><span>Spring Boot</span></div>
+                        <div class="stack-item"><span>WebSockets &amp; SSE</span></div>
+                        <div class="stack-item"><span>React 18</span></div>
+                        <div class="stack-item"><span>REST &amp; Webhook Design</span></div>
+                    </div>
+                </div>
+
+                <div class="stack-category reveal reveal--delay-1" id="stack-databases">
+                    <div class="stack-category__header">
+                        <span class="stack-category__icon" aria-hidden="true">🗄️</span>
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="stack-category__items">
+                        <div class="stack-item stack-item--primary"><span>MongoDB Atlas</span></div>
+                        <div class="stack-item stack-item--primary"><span>ChromaDB &amp; FAISS</span></div>
+                        <div class="stack-item"><span>PostgreSQL</span></div>
+                        <div class="stack-item"><span>Redis</span></div>
+                        <div class="stack-item"><span>Qdrant (in progress)</span></div>
+                    </div>
+                </div>
+
+                <div class="stack-category reveal reveal--delay-2" id="stack-cloud">
+                    <div class="stack-category__header">
+                        <span class="stack-category__icon" aria-hidden="true">☁️</span>
+                        <h3>Cloud &amp; DevOps</h3>
+                    </div>
+                    <div class="stack-category__items">
+                        <div class="stack-item stack-item--primary"><i class="fab fa-aws" aria-hidden="true"></i><span>AWS (Kinesis, S3, EC2)</span></div>
+                        <div class="stack-item"><i class="fab fa-docker" aria-hidden="true"></i><span>Docker</span></div>
+                        <div class="stack-item"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub Actions (CI/CD)</span></div>
+                        <div class="stack-item"><span>Render &amp; Vercel</span></div>
+                    </div>
+                </div>
+
+                <div class="stack-category reveal" id="stack-observability">
+                    <div class="stack-category__header">
+                        <span class="stack-category__icon" aria-hidden="true">🔭</span>
+                        <h3>Observability</h3>
+                    </div>
+                    <div class="stack-category__items">
+                        <div class="stack-item stack-item--primary"><span>LangSmith (LLM Tracing)</span></div>
+                        <div class="stack-item"><span>LangFuse</span></div>
+                        <div class="stack-item"><span>ELK Stack (Logstash)</span></div>
+                        <div class="stack-item"><span>Microsoft Presidio (PII)</span></div>
+                        <div class="stack-item"><span>Keycloak SSO</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ===== EXPERIENCE TIMELINE ===== -->
-    <section class="experience" id="experience">
+    <section class="experience" id="experience" aria-label="Work experience">
         <div class="section__container">
-            <div class="section__header animate-on-scroll">
-                <span class="section__label">// EXPERIENCE</span>
-                <h2 class="section__title">Professional <span class="text-gradient">Journey</span></h2>
-                <div class="section__line"></div>
-            </div>
+            <header class="section__header reveal">
+                <span class="section__eyebrow">// EXPERIENCE</span>
+                <h2 class="section__title">Where I've <span class="text-accent">Shipped</span></h2>
+                <p class="section__subtitle">Impact, not responsibilities.</p>
+            </header>
 
             <div class="timeline">
-                <div class="timeline__line"></div>
-
                 <!-- Accenture -->
-                <div class="timeline__item animate-on-scroll">
-                    <div class="timeline__dot">
-                        <div class="timeline__dot-inner"></div>
+                <div class="timeline__item reveal" id="exp-accenture">
+                    <div class="timeline__marker" aria-hidden="true">
+                        <div class="timeline__dot"><span class="timeline__dot-inner"></span></div>
+                        <div class="timeline__line-segment"></div>
                     </div>
                     <div class="timeline__content">
                         <div class="timeline__header">
-                            <span class="timeline__date">Dec 2024 — Present</span>
-                            <span class="timeline__badge-current">Current</span>
+                            <div class="timeline__title-block">
+                                <h3 class="timeline__role">Senior Analyst — Generative AI &amp; Automation</h3>
+                                <p class="timeline__company">
+                                    <strong>Accenture Solutions</strong>
+                                    <span class="timeline__location">&middot; Coimbatore, India</span>
+                                </p>
+                            </div>
+                            <div class="timeline__period">
+                                <span class="timeline__date">Dec 2024 — Present</span>
+                                <span class="timeline__badge-current">Current</span>
+                            </div>
                         </div>
-                        <h3 class="timeline__title">Senior Analyst — Generative AI & Automation</h3>
-                        <p class="timeline__company">Accenture • Coimbatore, India</p>
-                        <div class="timeline__desc">
-                            <ul class="experience-list">
-                                <li>Designed an NLP-powered Call Centre Analytics system ingesting JSON feeds from Verizon and Wells Fargo — performing root-cause detection, pattern mining, escalation identification, and callback intent extraction using LLM-based pipelines.</li>
-                                <li>Built interactive analytics dashboards surfacing recurring trends; improved issue resolution speed by 40% and cut root-cause discovery time by 40%.</li>
-                                <li>Benchmarked a PDF summarization tool across multiple LLMs (evaluating accuracy, coherence, latency, and cost), selecting the optimal model and achieving a 35% reduction in processing time with improved output quality.</li>
-                                <li>Developed automated API testing POCs using Karate Labs with multi-step API chaining, reducing manual testing effort by ~40% and improving end-to-end coverage.</li>
-                            </ul>
-                        </div>
+                        <ul class="timeline__impacts">
+                            <li class="timeline__impact">
+                                <span class="timeline__impact-metric">+40%</span>
+                                <span>Issue resolution speed for Verizon &amp; Wells Fargo call centers via a LangGraph 5-agent pipeline automating root-cause analysis, escalation routing, and callback intent extraction from millions of daily interactions</span>
+                            </li>
+                            <li class="timeline__impact">
+                                <span class="timeline__impact-metric">−35%</span>
+                                <span>PDF processing time after benchmarking GPT-4o, Claude 3.5, Gemini Pro, and Llama 3 across accuracy, coherence, latency, and cost — selecting the optimal model per document type</span>
+                            </li>
+                            <li class="timeline__impact">
+                                <span class="timeline__impact-metric">−40%</span>
+                                <span>Manual API testing effort by building a Karate Labs automation POC with multi-step API chaining, improving end-to-end test coverage</span>
+                            </li>
+                            <li class="timeline__impact">
+                                <span class="timeline__impact-metric">979</span>
+                                <span>AI-generated passing unit test cases deployed to production — validated quality assurance pipeline using automated generation and human review</span>
+                            </li>
+                        </ul>
                         <div class="timeline__tags">
-                            <span class="tag tag--sm">LLM Pipelines</span>
-                            <span class="tag tag--sm">NLP</span>
-                            <span class="tag tag--sm">Karate Labs</span>
-                            <span class="tag tag--sm">Analytics</span>
+                            <span class="tech-tag">LangGraph</span>
+                            <span class="tech-tag">GPT-4o</span>
+                            <span class="tech-tag">LLM Evaluation</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">ChromaDB</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Mindgate Solutions -->
-                <div class="timeline__item animate-on-scroll">
-                    <div class="timeline__dot">
-                        <div class="timeline__dot-inner"></div>
+                <div class="timeline__item reveal" id="exp-mindgate">
+                    <div class="timeline__marker" aria-hidden="true">
+                        <div class="timeline__dot"><span class="timeline__dot-inner"></span></div>
+                        <div class="timeline__line-segment"></div>
                     </div>
                     <div class="timeline__content">
                         <div class="timeline__header">
-                            <span class="timeline__date">Apr 2024 — Nov 2024</span>
+                            <div class="timeline__title-block">
+                                <h3 class="timeline__role">SDE II — Backend &amp; Integration Engineer</h3>
+                                <p class="timeline__company">
+                                    <strong>Mindgate Solutions</strong>
+                                    <span class="timeline__location">&middot; Chennai, India</span>
+                                </p>
+                            </div>
+                            <div class="timeline__period">
+                                <span class="timeline__date">Apr 2024 — Nov 2024</span>
+                            </div>
                         </div>
-                        <h3 class="timeline__title">SDE II — Backend & Integration Engineer</h3>
-                        <p class="timeline__company">Mindgate Solutions • Chennai, India</p>
-                        <div class="timeline__desc">
-                            <ul class="experience-list">
-                                <li>Integrated Middle Eastern banking bill payment providers (Efawateer, Sadad) to deliver secure payment solutions for corporate clients via robust API integrations.</li>
-                                <li>Collaborated with core banking teams to resolve transaction failures, reducing processing errors and improving throughput by ~20%.</li>
-                            </ul>
-                        </div>
+                        <ul class="timeline__impacts">
+                            <li class="timeline__impact">
+                                <span class="timeline__impact-metric">+20%</span>
+                                <span>Transaction throughput by integrating Middle Eastern banking bill payment providers (Efawateer, Sadad) for corporate clients via secure API integrations with core banking systems</span>
+                            </li>
+                            <li class="timeline__impact">
+                                <span class="timeline__impact-metric">↓ Errors</span>
+                                <span>Resolved systemic transaction failures in collaboration with core banking teams, reducing processing errors and improving system reliability</span>
+                            </li>
+                        </ul>
                         <div class="timeline__tags">
-                            <span class="tag tag--sm">API Integration</span>
-                            <span class="tag tag--sm">Banking</span>
-                            <span class="tag tag--sm">Backend</span>
-                            <span class="tag tag--sm">SQL</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Banking Systems</span>
+                            <span class="tech-tag">SQL</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Senseforth.ai Solutions -->
-                <div class="timeline__item animate-on-scroll">
-                    <div class="timeline__dot">
-                        <div class="timeline__dot-inner"></div>
+                <!-- Senseforth.ai -->
+                <div class="timeline__item reveal" id="exp-senseforth">
+                    <div class="timeline__marker" aria-hidden="true">
+                        <div class="timeline__dot"><span class="timeline__dot-inner"></span></div>
                     </div>
                     <div class="timeline__content">
                         <div class="timeline__header">
-                            <span class="timeline__date">Jun 2021 — Jan 2024</span>
+                            <div class="timeline__title-block">
+                                <h3 class="timeline__role">Software Developer — AI &amp; Backend Engineering</h3>
+                                <p class="timeline__company">
+                                    <strong>Senseforth.ai Solutions</strong>
+                                    <span class="timeline__location">&middot; Bangalore, India</span>
+                                </p>
+                            </div>
+                            <div class="timeline__period">
+                                <span class="timeline__date">Jun 2021 — Jan 2024</span>
+                            </div>
                         </div>
-                        <h3 class="timeline__title">Software Developer — AI & Backend Engineering</h3>
-                        <p class="timeline__company">Senseforth.ai Solutions • Bangalore, India</p>
-                        <div class="timeline__desc">
-                            <ul class="experience-list">
-                                <li>Architected an AWS Kinesis Firehose streaming pipeline to S3, with automated ingestion via ELK Stack (Logstash), eliminating manual uploads and improving data ingestion latency by ~50% — successfully promoted from POC to production.</li>
-                                <li>Implemented LLM-powered Text-to-Speech (TTS) capabilities using Python and Java integrations, increasing accessibility and boosting user engagement by 30% in a chatbot application.</li>
-                                <li>Built end-to-end Salesforce–WhatsApp integration using Twilio APIs (POC to production), automating messaging workflows, lead notifications, and two-way customer interactions via webhook handling.</li>
-                                <li>Enforced a consumption rate limit of 100 requests/day on API services, reducing server load by 40% — demonstrating LLM API cost optimisation and observability.</li>
-                            </ul>
-                        </div>
+                        <ul class="timeline__impacts">
+                            <li class="timeline__impact">
+                                <span class="timeline__impact-metric">−50%</span>
+                                <span>Data ingestion latency by architecting an AWS Kinesis Firehose streaming pipeline to S3 with automated ELK Stack ingestion via Logstash — promoted from POC to full production</span>
+                            </li>
+                            <li class="timeline__impact">
+                                <span class="timeline__impact-metric">+30%</span>
+                                <span>User engagement in chatbot application by implementing LLM-powered Text-to-Speech (TTS) using Python and Java integrations, increasing accessibility for end users</span>
+                            </li>
+                            <li class="timeline__impact">
+                                <span class="timeline__impact-metric">−40%</span>
+                                <span>Server load by enforcing 100 req/day consumption rate limits on LLM API services — demonstrating production LLM cost optimization and API observability</span>
+                            </li>
+                            <li class="timeline__impact">
+                                <span class="timeline__impact-metric">POC → Prod</span>
+                                <span>Built end-to-end Salesforce–WhatsApp integration using Twilio APIs, automating lead notifications and two-way customer interactions via webhook handling — shipped to production</span>
+                            </li>
+                        </ul>
                         <div class="timeline__tags">
-                            <span class="tag tag--sm">AWS Kinesis</span>
-                            <span class="tag tag--sm">TTS</span>
-                            <span class="tag tag--sm">Twilio</span>
-                            <span class="tag tag--sm">ELK Stack</span>
+                            <span class="tech-tag">AWS Kinesis</span>
+                            <span class="tech-tag">ELK Stack</span>
+                            <span class="tech-tag">LLM/TTS</span>
+                            <span class="tech-tag">Twilio</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Java</span>
                         </div>
                     </div>
                 </div>
@@ -890,167 +1218,134 @@
         </div>
     </section>
 
-    <!-- ===== IMPACT METRICS ===== -->
-    <section class="impact" id="impact">
+    <!-- ===== OPEN SOURCE & WRITING ===== -->
+    <section class="oss" id="oss" aria-label="Open source and writing">
         <div class="section__container">
-            <div class="section__header animate-on-scroll">
-                <span class="section__label">// PROFESSIONAL_IMPACT</span>
-                <h2 class="section__title">Measurable <span class="text-gradient">Results</span></h2>
-                <div class="section__line"></div>
-                <p class="section__subtitle">Production metrics that speak louder than demo videos.</p>
-            </div>
+            <header class="section__header reveal">
+                <span class="section__eyebrow">// OPEN_SOURCE &amp; WRITING</span>
+                <h2 class="section__title">In the <span class="text-accent">Wild</span></h2>
+                <p class="section__subtitle">Public thinking, contributions, and benchmarks. Actively building.</p>
+            </header>
 
-            <div class="impact__grid">
-                <div class="impact__card animate-on-scroll" id="impact-resolution">
-                    <div class="impact__card-inner">
-                        <div class="impact__icon"><i class="fas fa-tachometer-alt"></i></div>
-                        <div class="impact__number-container">
-                            <span class="impact__number" data-target="40">0</span>
-                            <span class="impact__symbol">%</span>
-                        </div>
-                        <h3 class="impact__label">Faster Issue Resolution</h3>
-                        <p class="impact__desc">
-                            Reduced issue-resolution speed through automated root-cause analysis 
-                            and intelligent escalation routing.
-                        </p>
-                        <div class="impact__bar">
-                            <div class="impact__bar-fill" data-width="40"></div>
-                        </div>
-                    </div>
+            <div class="oss-grid">
+                <div class="oss-card reveal" id="oss-github">
+                    <div class="oss-card__icon"><i class="fab fa-github" aria-hidden="true"></i></div>
+                    <h3 class="oss-card__title">GitHub</h3>
+                    <p class="oss-card__desc">Public repositories for all portfolio projects — LangGraph agents, CrewAI systems, FastAPI backends, and full-stack AI applications.</p>
+                    <a href="https://github.com/gowdul30" class="oss-card__link" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">
+                        github.com/gowdul30 →
+                    </a>
                 </div>
 
-                <div class="impact__card animate-on-scroll" id="impact-latency">
-                    <div class="impact__card-inner">
-                        <div class="impact__icon"><i class="fas fa-bolt"></i></div>
-                        <div class="impact__number-container">
-                            <span class="impact__number" data-target="50">0</span>
-                            <span class="impact__symbol">%</span>
-                        </div>
-                        <h3 class="impact__label">Improved Data Ingestion Latency</h3>
-                        <p class="impact__desc">
-                            Optimized streaming pipelines with Kinesis Firehose, cutting 
-                            end-to-end data processing latency in half.
-                        </p>
-                        <div class="impact__bar">
-                            <div class="impact__bar-fill" data-width="50"></div>
-                        </div>
-                    </div>
+                <div class="oss-card oss-card--placeholder reveal reveal--delay-1" id="oss-writing">
+                    <div class="oss-card__icon"><i class="fas fa-pen-nib" aria-hidden="true"></i></div>
+                    <h3 class="oss-card__title">Technical Writing</h3>
+                    <p class="oss-card__desc">In-depth articles on LangGraph HITL patterns, hybrid RAG search optimization, and production LLM cost management. Publishing Q3 2026.</p>
+                    <span class="oss-card__coming-soon">Coming soon</span>
                 </div>
 
-                <div class="impact__card animate-on-scroll" id="impact-tests">
-                    <div class="impact__card-inner">
-                        <div class="impact__icon"><i class="fas fa-check-circle"></i></div>
-                        <div class="impact__number-container">
-                            <span class="impact__number" data-target="979">0</span>
-                            <span class="impact__symbol"></span>
-                        </div>
-                        <h3 class="impact__label">AI-Generated Passing Test Cases</h3>
-                        <p class="impact__desc">
-                            Successfully generated 979 passing unit test cases via AI-powered 
-                            QA automation — production-validated quality assurance.
-                        </p>
-                        <div class="impact__bar">
-                            <div class="impact__bar-fill" data-width="97"></div>
-                        </div>
-                    </div>
+                <div class="oss-card oss-card--placeholder reveal reveal--delay-2" id="oss-benchmarks">
+                    <div class="oss-card__icon"><i class="fas fa-flask" aria-hidden="true"></i></div>
+                    <h3 class="oss-card__title">LLM Benchmarks</h3>
+                    <p class="oss-card__desc">Comparative evaluation reports across GPT-4o, Claude 3.5, Gemini Pro, and Llama 3 for specific production use cases — accuracy, coherence, latency, cost.</p>
+                    <span class="oss-card__coming-soon">Publishing Q3 2026</span>
                 </div>
-            </div>
-
-            <!-- Production Metrics Terminal -->
-            <div class="impact__terminal animate-on-scroll">
-                <div class="terminal__header">
-                    <div class="terminal__dots">
-                        <span class="terminal__dot terminal__dot--red"></span>
-                        <span class="terminal__dot terminal__dot--yellow"></span>
-                        <span class="terminal__dot terminal__dot--green"></span>
-                    </div>
-                    <span class="terminal__title">production_metrics.log</span>
-                </div>
-                <pre class="terminal__body terminal__body--log"><code><span class="log-timestamp">[2026-04-16 08:30:01]</span> <span class="log-level log-level--info">INFO</span>  Pipeline health: <span class="log-success">ALL SYSTEMS OPERATIONAL</span>
-<span class="log-timestamp">[2026-04-16 08:30:01]</span> <span class="log-level log-level--info">INFO</span>  Active agents: <span class="log-number">12</span> | Tasks completed: <span class="log-number">4,291</span>
-<span class="log-timestamp">[2026-04-16 08:30:02]</span> <span class="log-level log-level--info">INFO</span>  Avg response latency: <span class="log-number">187ms</span> (P95: <span class="log-number">312ms</span>)
-<span class="log-timestamp">[2026-04-16 08:30:02]</span> <span class="log-level log-level--success">PASS</span>  Unit tests: <span class="log-success">979/979 passing</span> ✓
-<span class="log-timestamp">[2026-04-16 08:30:03]</span> <span class="log-level log-level--info">INFO</span>  Issue resolution improvement: <span class="log-success">+40%</span>
-<span class="log-timestamp">[2026-04-16 08:30:03]</span> <span class="log-level log-level--info">INFO</span>  Data ingestion latency: <span class="log-success">-50%</span></code></pre>
             </div>
         </div>
     </section>
 
-    <!-- ===== CONTACT SECTION ===== -->
-    <section class="contact" id="contact">
+    <!-- ===== CONTACT / CTA ===== -->
+    <section class="contact" id="contact" aria-label="Contact and call to action">
+        <div class="contact__bg" aria-hidden="true"><div class="contact__orb"></div></div>
         <div class="section__container">
-            <div class="section__header animate-on-scroll">
-                <span class="section__label">// GET_IN_TOUCH</span>
-                <h2 class="section__title">Let's Build <span class="text-gradient">Together</span></h2>
-                <div class="section__line"></div>
-                <p class="section__subtitle">Looking to architect production AI systems? Let's talk.</p>
-            </div>
-
-            <div class="contact__content">
-                <div class="contact__info animate-on-scroll">
-                    <div class="contact__card" id="contact-card-email">
-                        <div class="contact__card-icon"><i class="fas fa-envelope"></i></div>
-                        <div>
-                            <h3 class="contact__card-title">Email</h3>
-                            <a href="mailto:gowdulaalam01@gmail.com" class="contact__card-link">gowdulaalam01@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact__card" id="contact-card-linkedin">
-                        <div class="contact__card-icon"><i class="fab fa-linkedin-in"></i></div>
-                        <div>
-                            <h3 class="contact__card-title">LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/gowdul-aalam/" class="contact__card-link" target="_blank" rel="noopener noreferrer">linkedin.com/in/gowdul-aalam</a>
-                        </div>
-                    </div>
-                    <div class="contact__card" id="contact-card-github">
-                        <div class="contact__card-icon"><i class="fab fa-github"></i></div>
-                        <div>
-                            <h3 class="contact__card-title">GitHub</h3>
-                            <a href="https://github.com/gowdul30" class="contact__card-link" target="_blank" rel="noopener noreferrer">github.com/gowdul30</a>
-                        </div>
-                    </div>
+            <div class="contact__inner reveal">
+                <div class="contact__availability">
+                    <span class="contact__availability-dot" aria-hidden="true"></span>
+                    <span>Available for remote roles &mdash; USD &middot; EUR &middot; SGD &middot; AED</span>
                 </div>
 
-                <form class="contact__form animate-on-scroll" id="contactForm">
-                    <div class="form__group">
-                        <label for="name" class="form__label">Name</label>
-                        <input type="text" id="name" class="form__input" placeholder="Your name" required>
+                <h2 class="contact__headline">
+                    Let's build<br>
+                    <span class="text-accent">production AI together.</span>
+                </h2>
+
+                <p class="contact__subtext">
+                    Looking for an Agentic AI Engineer, LLM Engineer, Applied AI Engineer, or Founding Engineer who ships
+                    production systems — not just prototypes? I'm open to roles at ambitious startups and frontier AI labs.
+                </p>
+
+                <div class="contact__ctas">
+                    <a href="https://calendly.com/gowdulaalam01/30min"
+                       class="btn btn--primary btn--lg" id="cta-book-calendly"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="Book a 30-minute discussion on Calendly">
+                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        Book a 30-min Discussion
+                    </a>
+                    <a href="resume.pdf" class="btn btn--outline btn--lg" id="cta-resume-footer"
+                       download="Gowdul_Aalam_Resume.pdf" aria-label="Download resume PDF">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                        Download Resume
+                    </a>
+                </div>
+
+                <div class="contact__links">
+                    <a href="https://github.com/gowdul30" class="contact__link" target="_blank" rel="noopener noreferrer" id="contact-github">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        github.com/gowdul30
+                    </a>
+                    <a href="https://www.linkedin.com/in/gowdul-aalam/" class="contact__link" target="_blank" rel="noopener noreferrer" id="contact-linkedin">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        linkedin.com/in/gowdul-aalam
+                    </a>
+                    <a href="mailto:gowdulaalam01@gmail.com" class="contact__link" id="contact-email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        gowdulaalam01@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact__targets">
+                    <p class="contact__targets-label">Target companies</p>
+                    <div class="contact__targets-list" aria-label="Target companies">
+                        <span>OpenAI</span><span aria-hidden="true">&middot;</span>
+                        <span>Anthropic</span><span aria-hidden="true">&middot;</span>
+                        <span>Cursor</span><span aria-hidden="true">&middot;</span>
+                        <span>Perplexity</span><span aria-hidden="true">&middot;</span>
+                        <span>Vercel</span><span aria-hidden="true">&middot;</span>
+                        <span>Replit</span><span aria-hidden="true">&middot;</span>
+                        <span>Scale AI</span><span aria-hidden="true">&middot;</span>
+                        <span>Harvey</span><span aria-hidden="true">&middot;</span>
+                        <span>ElevenLabs</span><span aria-hidden="true">&middot;</span>
+                        <span>Glean</span>
                     </div>
-                    <div class="form__group">
-                        <label for="email" class="form__label">Email</label>
-                        <input type="email" id="email" class="form__input" placeholder="your@email.com" required>
-                    </div>
-                    <div class="form__group">
-                        <label for="message" class="form__label">Message</label>
-                        <textarea id="message" class="form__textarea" rows="5" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn--primary btn--full" id="contact-submit">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__top">
-                <a href="#" class="nav__logo">
-                    <span class="nav__logo-bracket">&lt;</span>
-                    <span class="nav__logo-name">Gowdul Aalam M</span>
-                    <span class="nav__logo-bracket">/&gt;</span>
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+            <div class="footer__left">
+                <a href="#home" class="footer__logo" aria-label="Back to top">GA</a>
+                <span class="footer__name">Gowdul Aalam M</span>
+            </div>
+            <div class="footer__center">
+                <p class="footer__copy">&copy; 2026 &middot; Built for hiring managers, not bots.</p>
+            </div>
+            <div class="footer__right">
+                <a href="https://github.com/gowdul30" class="footer__link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
-                <div class="footer__socials">
-                    <a href="https://github.com/gowdul30" class="social-icon social-icon--sm" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/gowdul-aalam/" class="social-icon social-icon--sm" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="mailto:gowdulaalam01@gmail.com" class="social-icon social-icon--sm"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p class="footer__copy">&copy; 2026 Gowdul Aalam M. All rights reserved.</p>
-                <p class="footer__built">Built with precision. Deployed with confidence.</p>
+                <a href="https://www.linkedin.com/in/gowdul-aalam/" class="footer__link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a href="https://calendly.com/gowdulaalam01/30min" class="footer__link" target="_blank" rel="noopener noreferrer" aria-label="Book a meeting on Calendly">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:gowdulaalam01@gmail.com" class="footer__link" aria-label="Send email">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     </footer>
