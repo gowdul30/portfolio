@@ -704,6 +704,67 @@ code { font-family: var(--font-mono); }
 .project__link:hover { color: var(--text-primary); border-color: var(--border-strong); background: var(--bg-hover); }
 .project__link--disabled { cursor: default; opacity: 0.5; }
 
+/* Live Demo variant */
+.project__link--live {
+  color: var(--green);
+  border-color: rgba(16,185,129,0.3);
+  background: var(--green-dim);
+  gap: var(--sp-2);
+}
+.project__link--live:hover {
+  color: var(--green);
+  border-color: rgba(16,185,129,0.6);
+  background: rgba(16,185,129,0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(16,185,129,0.15);
+}
+.project__link-live-dot {
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: var(--r-full);
+  flex-shrink: 0;
+  animation: pulse-green 2s ease infinite;
+}
+
+/* Case study live deployment banner */
+.case-study__live-link {
+  display: flex; align-items: center; gap: var(--sp-3);
+  margin-top: var(--sp-5);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--green-dim);
+  border: 1px solid rgba(16,185,129,0.25);
+  border-radius: var(--r-md);
+  font-size: 0.875rem; font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  transition: all var(--t-base);
+  flex-wrap: wrap;
+}
+.case-study__live-link:hover {
+  background: rgba(16,185,129,0.15);
+  border-color: rgba(16,185,129,0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(16,185,129,0.15);
+}
+.case-study__live-dot {
+  width: 8px; height: 8px;
+  background: var(--green);
+  border-radius: var(--r-full);
+  flex-shrink: 0;
+  animation: pulse-green 2s ease infinite;
+}
+.case-study__live-url {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: rgba(16,185,129,0.75);
+  font-weight: 400;
+  margin-left: auto;
+}
+.case-study__live-link i {
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
 .project__body { padding: var(--sp-6); }
 
 .project__summary { margin-bottom: var(--sp-5); }
